@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.home-page {
+	background-image: url("../Media/Homepage Photo.png");
+	min-height: 100vh;
+	background-position: center -50px;
+	background-size: auto;
+}
+
+nav {
+	height: 14vh;
+	display: flex;
+	justify-content: right;
+}
+.nav-components {
+	margin: auto 0;
+	display: flex;
+}
+.nav-components > * {
+	margin-right: 72px;
+}
+
+.home-components {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 3em;
+}
+.shop-now-home:hover,
+.home-login:hover,
+.home-signup:hover {
+	cursor: pointer;
+}
+.shop-now-home {
+	text-decoration: none;
+	background-image: url("../Media/Homepage Photo.png");
+	background-position: left top -95px;
+	padding: 0.74em 1.57em;
+	border-radius: 100px;
+	border: 0;
+	font: "Raleway";
+	color: var(--white-color);
+	font-size: 1.875rem;
+	font-weight: 500;
+	margin-top: 2.24em;
+}
+
+/*
+
+Styling/Typography
+
+*/
+
+h1 {
+	font-family: var(--main-font);
+}
+.home-components > h1 {
+	font-weight: 400;
+	font-size: 6rem;
+}
+.homepage-first-line-text {
+	color: var(--white-color);
+}
+.nav-components > * {
+	font-family: var(--alt-font);
+	font-weight: 700;
+	font-size: 1.25rem;
+	background: 0;
+	border: 0;
+}
+.nav-components > * {
+	color: var(--white-color);
+	text-decoration: none;
+}
+.homepage-second-line-text {
+	background-image: url("../Media/Homepage Photo.png");
+	background-clip: text;
+	color: transparent;
+	background-position-x: center;
+	background-position-y: top -225px;
+}
+.home-login:hover,
+.home-signup:hover {
+	color: var(--brown-color);
+}
