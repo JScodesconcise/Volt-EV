@@ -8,8 +8,12 @@ function Navbar() {
 		<nav className="navbar-container">
 			<div></div>
 			<div className="nav-items">
-				<NavLink className="main-login">Login</NavLink>
-				<NavLink className="main-signup">Sign Up</NavLink>
+				<NavLink to="/" className="main-login">
+					Login
+				</NavLink>
+				<NavLink to="/" className="main-signup">
+					Sign Up
+				</NavLink>
 				<img src={CartLogo} className="" />
 			</div>
 		</nav>
