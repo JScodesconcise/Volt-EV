@@ -19,6 +19,7 @@
 	display: flex;
 }
 
+.main-loan-calculator,
 .main-signup,
 .main-login {
 	color: var(--black-color);

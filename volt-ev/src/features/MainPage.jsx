@@ -14,6 +14,9 @@ function MainPage() {
 					<NavLink to="/" className="home-signup">
 						Sign Up
 					</NavLink>
+					<NavLink to="/loan-calculator" className="home-loan-calculator">
+						Loan Calculator
+					</NavLink>
 				</div>
 			</nav>
 

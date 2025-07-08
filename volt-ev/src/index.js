@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router";
 import ViewVehicles from "./features/Inventory/ViewVehicles";
+import LoanCalculator from "./features/LoanCalculator/LoanCalculator";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -12,6 +13,7 @@ root.render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/Inventory" element={<ViewVehicles />}></Route>
+				<Route path="/loan-calculator" element={<LoanCalculator />}></Route>
 				<Route path="/" element={<App />} />
 			</Routes>
 		</BrowserRouter>

@@ -30,7 +30,8 @@ nav {
 }
 .shop-now-home:hover,
 .home-login:hover,
-.home-signup:hover {
+.home-signup:hover,
+.home-loan-calculator:hover {
 	cursor: pointer;
 }
 .shop-now-home {
@@ -82,6 +83,7 @@ h1 {
 	background-position-y: top -225px;
 }
 .home-login:hover,
-.home-signup:hover {
+.home-signup:hover,
+.home-loan-calculator:hover {
 	color: var(--brown-color);
 }

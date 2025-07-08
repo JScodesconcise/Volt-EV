@@ -14,6 +14,9 @@ function Navbar() {
 				<NavLink to="/" className="main-signup">
 					Sign Up
 				</NavLink>
+				<NavLink to="/" className="main-loan-calculator">
+					Loan Calculator
+				</NavLink>
 				<img src={CartLogo} className="" />
 			</div>
 		</nav>
