@@ -1,22 +1,42 @@
-import blackCarImage from "../../Media/EV Olive View.png";
+import rangeLogo from "../../Media/zap.svg";
+import acelerationLogo from "../../Media/car-front.svg";
+import drivetrainLogo from "../../Media/gauge.svg";
+import cartLogo from "../../Media/cart-vehicle-card.svg";
+import "./vehiclecard.css";
 
-function VehicleCard() {
+function VehicleCard({
+	image,
+	title,
+	year,
+	drivetrain,
+	range,
+	acceleration,
+	price,
+}) {
 	return (
-		<div>
-			<img src={blackCarImage} />
-			<h1>Model R</h1>
-			<div>
-				<h2>2023</h2>
+		<div className="vehicle-card">
+			<img className="vehicle-card-display-image" src={image} />
+			<div className="vehicle-card-info-container">
+				<div className="vehicle-card-title-and-year-container">
+					<h1 className="vehicle-card-title">{title}</h1>
+					<h2 className="vehicle-card-year">{year}</h2>
+				</div>
+				<div className="vehicle-card-car-details">
+					<img src={rangeLogo} />
+					<h3>{range}</h3>
+					<img src={acelerationLogo} />
+					<h3>{acceleration}</h3>
+					<img src={drivetrainLogo} />
+					<h3>{drivetrain}</h3>
+				</div>
+				<div className="vehicle-card-button-and-price">
+					<h2>{price}</h2>
+					<button>
+						<img src={cartLogo} />
+						Add to Cart
+					</button>
+				</div>
 			</div>
-			<div>
-				<img />
-				<h3></h3>
-				<img />
-				<h3></h3>
-				<img />
-			</div>
-			<h2></h2>
-			<button></button>
 		</div>
 	);
 }

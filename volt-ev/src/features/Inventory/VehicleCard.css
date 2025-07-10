@@ -1,0 +1,30 @@
+.vehicle-card {
+	width: 23.4375em;
+}
+.vehicle-card-display-image {
+	width: 100%;
+}
+
+.vehicle-card-title-and-year-container,
+.vehicle-card-car-details,
+.vehicle-card-button-and-price {
+	display: flex;
+}
+
+.vehicle-card-info-container {
+	margin: 0.5em 1em;
+}
+
+.vehicle-card-title {
+}
+.vehicle-card-button-and-price {
+	justify-content: space-between;
+}
+
+/* 
+
+styling/typography
+
+*/
+.vehicle-card-year {
+}

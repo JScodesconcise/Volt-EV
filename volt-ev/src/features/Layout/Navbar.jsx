@@ -1,12 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import CartLogo from "../../Media/CartLogo.svg";
 import "./navbar.css";
 
 function Navbar() {
 	return (
 		<nav className="navbar-container">
-			<div></div>
 			<div className="nav-items">
 				<NavLink to="/" className="main-login">
 					Login
@@ -14,10 +13,10 @@ function Navbar() {
 				<NavLink to="/" className="main-signup">
 					Sign Up
 				</NavLink>
-				<NavLink to="/" className="main-loan-calculator">
+				<NavLink to="/calculator" className="main-loan-calculator">
 					Loan Calculator
 				</NavLink>
-				<img src={CartLogo} className="" />
+				<img src={CartLogo} className="cart-image" />
 			</div>
 		</nav>
 	);

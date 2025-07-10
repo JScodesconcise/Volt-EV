@@ -1,0 +1,4 @@
+.shopping-cart-container {
+	position: fixed;
+	z-index: 1;
+}

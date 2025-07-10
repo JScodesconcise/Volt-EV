@@ -12,8 +12,8 @@ root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/Inventory" element={<ViewVehicles />}></Route>
-				<Route path="/loan-calculator" element={<LoanCalculator />}></Route>
+				<Route path="/inventory" element={<ViewVehicles />}></Route>
+				<Route path="/calculator" element={<LoanCalculator />}></Route>
 				<Route path="/" element={<App />} />
 			</Routes>
 		</BrowserRouter>
