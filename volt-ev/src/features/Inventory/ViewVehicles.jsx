@@ -3,8 +3,12 @@ import "./viewvehicles.css";
 import ViewVehiclesSideBar from "./ViewVehiclesSideBar.jsx";
 import VehicleCard from "./VehicleCard.jsx";
 import BlackVehicleCardImage from "../../Media/EV black view.png";
+import Cart from "../Cart/Cart.jsx";
+import { useShoppingCart } from "../../contexts/ShoppingCartContext.jsx";
 
 function ViewVehicles() {
+	const { visibility, setVisibility } = useShoppingCart();
+
 	return (
 		<div className="inventory-container">
 			<Navbar></Navbar>
@@ -21,6 +25,7 @@ function ViewVehicles() {
 					price={`$59 955`}
 				/>
 			</div>
+			{visibility ? <Cart /> : <></>}
 		</div>
 	);
 }

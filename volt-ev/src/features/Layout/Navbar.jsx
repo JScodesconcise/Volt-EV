@@ -2,8 +2,11 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router";
 import CartLogo from "../../Media/CartLogo.svg";
 import "./navbar.css";
+import { useShoppingCart } from "../../contexts/ShoppingCartContext.jsx";
 
 function Navbar() {
+	const { visibility, setVisibility } = useShoppingCart();
+
 	return (
 		<nav className="navbar-container">
 			<div className="nav-items">
@@ -16,7 +19,11 @@ function Navbar() {
 				<NavLink to="/calculator" className="main-loan-calculator">
 					Loan Calculator
 				</NavLink>
-				<img src={CartLogo} className="cart-image" />
+				<img
+					src={CartLogo}
+					className="cart-image"
+					onClick={() => setVisibility(true)}
+				/>
 			</div>
 		</nav>
 	);
