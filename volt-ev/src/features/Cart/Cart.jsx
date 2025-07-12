@@ -1,5 +1,6 @@
 import { useShoppingCart } from "../../contexts/ShoppingCartContext.jsx";
 import { useState } from "react";
+import { NavLink } from "react-router";
 import garbageicon from "../../Media/garbageicon.svg";
 import blackModelRPicture from "../../Media/EV black view.png";
 import plusicon from "../../Media/plus.svg";
@@ -33,10 +34,10 @@ function Cart({ vehicles }) {
 						<img src={arrowleft} />
 						Continue Shopping
 					</button>
-					<button>
+					<NavLink to="/checkout">
 						<img src={zap} />
 						Proceeed to Checkout
-					</button>
+					</NavLink>
 				</div>
 			</div>
 		</div>
