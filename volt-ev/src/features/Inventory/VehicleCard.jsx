@@ -2,7 +2,7 @@ import rangeLogo from "../../Media/zap.svg";
 import acelerationLogo from "../../Media/car-front.svg";
 import drivetrainLogo from "../../Media/gauge.svg";
 import cartLogo from "../../Media/cart-vehicle-card.svg";
-import "./vehiclecard.css";
+import "./VehicleCard.css";
 
 function VehicleCard({
 	image,

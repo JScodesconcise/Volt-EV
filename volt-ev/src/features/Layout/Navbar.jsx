@@ -10,10 +10,10 @@ function Navbar() {
 	return (
 		<nav className="navbar-container">
 			<div className="nav-items">
-				<NavLink to="/" className="main-login">
+				<NavLink to="/login" className="main-login">
 					Login
 				</NavLink>
-				<NavLink to="/" className="main-signup">
+				<NavLink to="/register" className="main-signup">
 					Sign Up
 				</NavLink>
 				<NavLink to="/calculator" className="main-loan-calculator">
