@@ -9,7 +9,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log('Logging in:', { email, password });
-    // Add authentication logic here
   };
 
   return (

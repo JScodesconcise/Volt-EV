@@ -25,7 +25,6 @@ const Register = () => {
     }
 
     console.log("Registering:", formData);
-    // You could redirect or reset form here
   };
 
   return (
