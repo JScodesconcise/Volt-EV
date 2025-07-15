@@ -16,16 +16,43 @@ const Register = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleRegister = (e) => {
-    e.preventDefault();
+  const handleRegister = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    password: formData.password,
+    role: formData.role,
+  };
+
+  try {
+    const response = await fetch('http://localhost:8080/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    console.log("Registering:", formData);
-  };
+    const result = await response.text(); // assuming Spring returns a simple string
+    console.log("Server response:", result);
+    alert(result);
+  } catch (error) {
+    console.error("Error during registration:", error.message || error);
+    alert("An error occurred: " + (error.message || error));
+  }
+};
+
 
   return (
     <div className="auth-container">
