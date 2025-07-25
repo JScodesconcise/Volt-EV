@@ -45,12 +45,13 @@ public class FileService {
                 .toString();
     }
 
-    public void uploadFile(MultipartFile file, String accesstype) throws IOException {
+    public void uploadFile(MultipartFile file) throws IOException {
         try(InputStream inputStream = file.getInputStream()){
             PutObjectRequest req = PutObjectRequest
                     .builder()
                     .bucket(bucket)
                     .key(file.getName())
+                    .acl("FULL_CONTROL")
                     .build();
 
             RequestBody requestBody = RequestBody.fromInputStream(inputStream, file.getSize());

@@ -6,12 +6,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
-@Document("collection = Vehicle")
 public class Vehicle {
-    private MultipartFile image;
+    @Id
+    private UUID id;
+    private String image;
     private int price;
     private String colour;
-    private String driveTrain;
+    private String drivetrain;
     private int year;
     private int range;
     private int horsepower;
@@ -19,4 +20,18 @@ public class Vehicle {
     private int battery;
     private int charging;
     private int efficiency;
+
+    public String getColour() {
+        return this.colour;
+    }
+    public String getDrivetrain(){
+        return this.drivetrain;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+    public void setDrivetrain(String drivetrain){
+        this.drivetrain = drivetrain;
+    }
 }
