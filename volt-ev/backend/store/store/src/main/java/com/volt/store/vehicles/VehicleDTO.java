@@ -6,12 +6,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
-@Document(collection = "vehicles")
-public class Vehicle {
-
-    @Id
-    private String id;
-    private String image;
+public class VehicleDTO {
+    private MultipartFile image;
     private int price;
     private String colour;
     private String drivetrain;
@@ -23,19 +19,24 @@ public class Vehicle {
     private int charging;
     private int efficiency;
 
-    public void setColour(String colour) {
-        this.colour = colour;
-    }
-    public void setDrivetrain(String drivetrain){
-        this.drivetrain = drivetrain;
+    public MultipartFile getImage(){
+        return this.image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MultipartFile image) {
         this.image = image;
     }
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public void setDrivetrain(String drivetrain) {
+        this.drivetrain = drivetrain;
     }
 
     public void setYear(int year) {
@@ -48,26 +49,6 @@ public class Vehicle {
 
     public void setHorsepower(int horsepower) {
         this.horsepower = horsepower;
-    }
-
-    public void setAcceleration(int acceleration) {
-        this.acceleration = acceleration;
-    }
-
-    public void setBattery(int battery) {
-        this.battery = battery;
-    }
-
-    public void setCharging(int charging) {
-        this.charging = charging;
-    }
-
-    public void setEfficiency(int efficiency) {
-        this.efficiency = efficiency;
-    }
-
-    public String getImage() {
-        return image;
     }
 
     public int getPrice() {
@@ -110,7 +91,19 @@ public class Vehicle {
         return efficiency;
     }
 
-    public String getId() {
-        return id;
+    public void setAcceleration(int acceleration) {
+        this.acceleration = acceleration;
+    }
+
+    public void setBattery(int battery) {
+        this.battery = battery;
+    }
+
+    public void setCharging(int charging) {
+        this.charging = charging;
+    }
+
+    public void setEfficiency(int efficiency) {
+        this.efficiency = efficiency;
     }
 }

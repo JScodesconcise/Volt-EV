@@ -1,7 +1,7 @@
 //package com.volt.store.services;
 //
-//import com.volt.store.models.User;
-//import com.volt.store.repositories.UserRepository;
+//import com.volt.store.Auth.User;
+//import com.volt.store.Auth.UserRepository;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //
