@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 }
+<<<<<<< HEAD
 .add-vehicles-form-wrapper {
 	width: 60%;
 }
@@ -66,4 +67,10 @@
 }
 .add-vehicle-title {
 	margin-top: 1.5em;
+=======
+.dropzone {
+	border: 1px solid blue;
+	height: 100px;
+	width: 100px;
+>>>>>>> 9cbf8dbac4d4600256eab4e2e5cacd963708b4f1
 }
