@@ -4,14 +4,15 @@
 
 .checkout-container {
 	min-height: 100vh;
-	width: 100%;
 	display: flex;
 	align-items: center;
+	width: 100%;
 }
 
 .checkout-input-header,
 .checkout-input {
 	font-family: "roboto";
+	color: var(--black-colour);
 }
 
 /*
@@ -19,20 +20,161 @@
 */
 .checkout-input-info-container {
 	width: 65%;
+	display: flex;
+	justify-content: center;
 }
 
 .checkout-input {
-	font-size: 1.25 em;
+	font-size: 1rem;
 	padding: 0.8em;
 	border-radius: 5px;
+	border: 1.5px solid var(--gray-color);
+}
+.checkout-input-header {
+	font-size: 1.25rem;
+}
+.checkout-input::placeholder {
+	color: var(--black-colour);
+}
+.checkout-input:focus {
+	outline: 1px solid var(--orange-color);
+}
+.checkout-input.first-name {
+	width: 36%;
+	margin-right: 4%;
 }
 
+.checkout-input.last-name {
+	width: 60%;
+}
+.checkout-input.street-address,
+.checkout-input.apt-suite {
+	width: 100%;
+	margin-bottom: 1.5625em;
+}
+.checkout-input.city {
+	width: 40%;
+}
+.checkout-input.province {
+	width: 20%;
+}
+.checkout-input.postal-code {
+	width: 30%;
+}
+.checkout-input.city,
+.checkout-input.checkout-input.province {
+	margin-right: 5%;
+}
+
+.checkout-input.card-num {
+	width: 65%;
+	margin-right: 3.4%;
+}
+.checkout-input.exp-date {
+	width: 19%;
+	margin-right: 4.6%;
+}
+.checkout-input.cvv {
+	width: 8%;
+}
+.checkout-input-header {
+	font-weight: 600;
+	margin-bottom: 0.5em;
+}
+.checkout-input-info-first-last-name,
+.checkout-input-info-address {
+	margin-bottom: 3.6875em;
+}
+.checkout-input-info-inner-container {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
 /*
     Checkout Summary
 */
+.pay-button-checkout-wrapper,
+.product-inner-wrapper-checkout,
+.vehicle-titles-wrapper-checkout,
+.subtotal-wrapper-checkout,
+.total-wrapper-checkout,
+.taxes-wrapper-checkout,
+.checkout-summary-container {
+	display: flex;
+}
+.subtotal-wrapper-checkout,
+.total-wrapper-checkout,
+.taxes-wrapper-checkout {
+	justify-content: space-between;
+}
 
 .checkout-summary-container {
 	width: 40%;
-	height: 30vh;
+	padding: 1.5em;
 	background-color: var(--gray-color);
+}
+
+.vehicle-image-checkout {
+	width: 124px;
+}
+
+.vehicle-title-checkout {
+	font-size: 2rem;
+	font-weight: 400;
+}
+.vehicle-colour-checkout {
+	font-size: 1.125rem;
+	font-weight: 300;
+}
+
+.vehicle-titles-wrapper-checkout {
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin-left: 1em;
+}
+
+.checkout-summary-inner-container {
+	width: 83%;
+}
+.subtotal-wrapper-checkout > h3,
+.taxes-wrapper-checkout > h3 {
+	font-weight: 400;
+	font-size: 0.875rem;
+	overflow-y: auto;
+}
+.total-wrapper-checkout > h3,
+.pay-button-checkout {
+	font-weight: 700;
+}
+.pay-button-checkout {
+	width: 67%;
+	border-radius: 50px;
+	border: none;
+	background-color: var(--navy-color);
+	color: var(--white-color);
+	font-size: 1rem;
+	padding: 0.625em 0;
+	margin-bottom: 4.625em;
+}
+.pay-button-checkout:hover {
+	cursor: pointer;
+}
+.product-outer-wrapper-checkout {
+	min-height: 375px;
+}
+.taxes-wrapper-checkout {
+	margin-bottom: 2.625em;
+}
+.checkout-summary-container,
+.pay-button-checkout-wrapper {
+	justify-content: center;
+}
+.total-wrapper-checkout {
+	margin-bottom: 3em;
+}
+.checkout-summary-inner-container {
+	margin-top: 2.3125em;
+}
+.product-inner-wrapper-checkout {
+	margin-bottom: 1em;
 }

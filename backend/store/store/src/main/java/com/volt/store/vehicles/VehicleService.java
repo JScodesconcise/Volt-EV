@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VehicleService {
@@ -22,13 +23,16 @@ public class VehicleService {
         vehicleRepository.insert(vehicle);
     }
 
-    public Page<Vehicle> getVehicles(int page, String sortBy, String color){
-        if(sortBy.isEmpty() && color.isEmpty()){
-            return vehicleRepository.findAll(PageRequest.of(page, 9, Sort.by("id")));
+    public Page<Vehicle> getVehicles(int page, String sortBy, List<String> colours, int startYear,
+                                     int endYear, int startPrice, int endPrice){
+        if(sortBy.isEmpty() && colours.isEmpty()){
+            return vehicleRepository.findByYearBetweenAndPriceBetween(startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by("_id")));
         }else if (sortBy.isEmpty()){
-            return vehicleRepository.findByColour(color, PageRequest.of(page, 9, Sort.by("id")));
+            return vehicleRepository.findByColourInAndYearBetweenAndPriceBetween(colours, startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by("_id")));
+        }else if(colours.isEmpty()){
+            return vehicleRepository.findByYearBetweenAndPriceBetween(startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by(sortBy).descending()));
         }else{
-            return vehicleRepository.findByColour(color, PageRequest.of(page, 9, Sort.by(sortBy)));
+            return vehicleRepository.findByColourInAndYearBetweenAndPriceBetween(colours, startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by(sortBy)));
         }
     }
 }

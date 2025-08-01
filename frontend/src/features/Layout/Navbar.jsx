@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router";
 import CartLogo from "../../Media/CartLogo.svg";
 import "./navbar.css";
-import { useShoppingCart } from "../../contexts/ShoppingCartContext.jsx";
+import { useShoppingCart } from "../../hooks/useShoppingCart.jsx";
 
 function Navbar() {
 	const { visibility, setVisibility } = useShoppingCart();

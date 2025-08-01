@@ -11,3 +11,9 @@
 .view-vehicles-sidebar-and-cards {
 	display: flex;
 }
+.vehicle-card-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	max-width: 80%;
+}

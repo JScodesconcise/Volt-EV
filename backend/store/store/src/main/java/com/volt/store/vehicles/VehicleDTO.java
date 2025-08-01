@@ -1,5 +1,7 @@
 package com.volt.store.vehicles;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import static com.fasterxml.jackson.annotation.JsonProperty.Access;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.web.multipart.MultipartFile;
@@ -7,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.UUID;
 
 public class VehicleDTO {
+    @JsonProperty(access = Access.WRITE_ONLY)
     private MultipartFile image;
     private int price;
     private String colour;
@@ -18,6 +21,9 @@ public class VehicleDTO {
     private int battery;
     private int charging;
     private int efficiency;
+    @JsonProperty(access = Access.READ_ONLY)
+    private String imageUrl;
+    private String imageKey;
 
     public MultipartFile getImage(){
         return this.image;
@@ -49,6 +55,10 @@ public class VehicleDTO {
 
     public void setHorsepower(int horsepower) {
         this.horsepower = horsepower;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public int getPrice() {
@@ -105,5 +115,14 @@ public class VehicleDTO {
 
     public void setEfficiency(int efficiency) {
         this.efficiency = efficiency;
+    }
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
+    }
+    public String getImageKey(){
+        return this.imageKey;
+    }
+    public void setImageKey(String imageKey){
+        this.imageKey = imageKey;
     }
 }

@@ -1,5 +1,9 @@
 .vehicle-card {
+	align-self: flex-start;
+	border-radius: 5px;
 	width: 23.4375em;
+	overflow: hidden;
+	margin-right: 1.125em;
 }
 .vehicle-card-display-image {
 	width: 100%;
@@ -15,19 +19,71 @@
 	margin: 0.5em 1em;
 }
 
-.vehicle-card-title {
-}
 .vehicle-card-button-and-price {
 	justify-content: space-between;
+	margin: auto 0;
+}
+.vehicle-card-title-and-year-container,
+.vehicle-card-car-details {
+	margin: 0.75em 0;
+}
+.vehicle-card-title-and-year-container {
+	justify-content: space-between;
+}
+.vehicle-card-year,
+.vehicle-card-title {
+	margin: auto 0;
+}
+
+.car-detail-wrapper {
+	display: flex;
+	margin-right: 1.4375em;
 }
 
 /* 
-
-styling/typography
-
+	styling/typography
 */
+.car-detail-wrapper > h3 {
+	font-weight: 300;
+	font-family: "Montserrat";
+}
 .vehicle-card-year {
+	padding: 0.2em 0.45em;
+	color: var(--green-color);
 }
 .vehicle-card-year-container {
 	background-color: #a7d8d0;
+	align-self: flex-start;
+	border-radius: 100px;
+}
+
+.vehicle-card-title,
+.vehicle-card-year,
+.vehicle-card-button {
+	font-family: "Roboto";
+}
+
+.vehicle-card-year {
+	font-weight: 400;
+}
+.vehicle-card-title {
+	font-size: 1.875em;
+}
+.vehicle-card-title,
+.vehicle-card-button {
+	font-weight: 700;
+}
+.vehicle-card-button {
+	display: flex;
+	padding: 0.75em 1.5em;
+	background-color: var(--navy-color);
+	font-size: 0.875em;
+	color: var(--white-color);
+	border-radius: 5px;
+}
+.vehicle-card-button:hover {
+	cursor: pointer;
+}
+.vehicle-card-button > img {
+	margin-right: 1.125em;
 }

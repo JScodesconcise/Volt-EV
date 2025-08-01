@@ -1,9 +1,11 @@
 import { useDropzone } from "react-dropzone";
+import { useNavigate } from "react-router";
 import { useState, useEffect, useRef, useMemo } from "react";
 import axios from "axios";
 import "./addvehicles.css";
 
 function AddVehicle() {
+	const navigate = useNavigate();
 	const [files, setFiles] = useState([]);
 	const fileRef = useRef(null);
 
@@ -62,7 +64,7 @@ function AddVehicle() {
 		const formData = new FormData(e.currentTarget);
 		console.log(formData);
 		axios
-			.post("http://localhost:8080/addvehicle/upload", formData)
+			.post("http://localhost:8080/vehicle/upload", formData)
 			.then((response) => {
 				console.log(response);
 			})

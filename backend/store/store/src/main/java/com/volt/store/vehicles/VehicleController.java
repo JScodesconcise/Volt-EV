@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -25,9 +27,10 @@ public class VehicleController {
         this.fileService = fileService;
         this.vehicleMapper = vehicleMapper;
     }
+
     @PostMapping("/upload")
     public ResponseEntity<Void> addVehicles(@ModelAttribute VehicleDTO vehicle) throws IOException {
-        //fileService.uploadFile(vehicle.getImage());
+        fileService.uploadFile(vehicle.getImage());
         Vehicle res = vehicleMapper.VechicleDTOtoVehicle(vehicle);
         vehicleService.addVehicle(res);
 
@@ -40,11 +43,22 @@ public class VehicleController {
         return ResponseEntity.ok(resp);
     }
     @GetMapping("/getVehicles")
-    public ResponseEntity<Page<Vehicle>> getVehicles(@RequestParam(defaultValue = "0") int page,
-                                                     @RequestParam(defaultValue = "") String sortBy,
-                                                     @RequestParam(defaultValue = "") String colour){
-        
-        Page<Vehicle> res = vehicleService.getVehicles(page, sortBy, colour);
+    public ResponseEntity<List<VehicleDTO>> getVehicles(@RequestParam(defaultValue = "0") int page,
+                                                        @RequestParam(defaultValue = "") String sortBy,
+                                                        @RequestParam(defaultValue = "") Optional<List<String>> colours,
+                                                        @RequestParam(defaultValue = "2000") int startYear,
+                                                        @RequestParam(defaultValue = "2025") int endYear,
+                                                        @RequestParam(defaultValue = "30000") int startPrice,
+                                                        @RequestParam(defaultValue = "100000") int endPrice){
+
+
+        List<String> colourList = colours.isEmpty() ? new ArrayList<>() : colours.get();
+
+        List<VehicleDTO> res = vehicleService.getVehicles(page, sortBy, colourList, startYear, endYear, startPrice, endPrice)
+                                .map(v -> vehicleMapper.VehicleToDTO(v))
+                                .map(v -> vehicleMapper.VehicleDTOattatchUrl(v))
+                                .getContent();
+
         return ResponseEntity.ok(res);
     }
 }
