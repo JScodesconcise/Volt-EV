@@ -28,6 +28,25 @@
   margin-left: 1.2em;
 }
 
+.home-link {
+  position: absolute;
+  top: 2.6rem !important; 
+  left: 2rem;
+  text-decoration: none;
+  color: #1a2e3c !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem !important;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  border: none !important; 
+  padding: 0 !important;  
+  z-index: 9999;
+}
+
+.home-link:hover {
+  color: #ff9e64 !important;
+}
+
 /* 
 calculator form 
 */
@@ -196,4 +215,84 @@ select:invalid {
   border-top: 1px solid #f8fafc;
   padding-top: 20px;
   margin-top: 15px;
+}
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .loan-calculator-container {
+    padding: 0 20px 40px 20px;
+  }
+  
+  .loan-calculator-header h1 {
+    font-size: 2.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .loan-calculator-header p {
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .loan-calculator-form {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    min-height: 520px;
+    padding: 25px 20px;
+    margin: 0 auto 10px auto;
+  }
+  
+  .home-link {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem !important;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+  }
+  
+  .input-wrapper input {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .currency-symbol {
+    left: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .percentage-symbol {
+    right: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .input-wrapper input[type="text"] {
+    padding-left: 30px;
+  }
+  
+  select,
+  .loan-term-dropdown {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .calculate-button,
+  .reset-button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
 }

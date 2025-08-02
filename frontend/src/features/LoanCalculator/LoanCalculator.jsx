@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "./LoanCalculator.css";
 import Navbar from "../Layout/Navbar";
 
@@ -47,6 +48,7 @@ function LoanCalculator() {
 
   return (
     <div className="loan-calculator-container">
+    <Link to="/" className="home-link">Home</Link>
       <div className="loan-calculator-header">
         <Navbar></Navbar>
         <h1>Loan Calculator</h1>

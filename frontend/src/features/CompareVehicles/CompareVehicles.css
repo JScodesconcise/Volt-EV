@@ -1,0 +1,300 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Main container for the entire compare vehicles page */
+.compare-vehicles-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Content wrapper with max width and centering */
+.compare-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main title "Compare Vehicles" - matching inventory page */
+.compare-vehicles-container > h1 {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 4rem;
+  margin-left: 0.45em;
+  margin-bottom: 1.4em;
+}
+
+/* Grid layout for the two vehicle cards - side by side */
+.vehicle-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  justify-items: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Individual vehicle card styling - matching inventory page exactly */
+.vehicle-card {
+  align-self: flex-start;
+  border-radius: 5px;
+  width: 23.4375em;
+  overflow: hidden;
+  margin-right: 1.125em;
+}
+
+/* Vehicle image at the top of each card */
+.vehicle-card-display-image {
+  width: 100%;
+}
+
+/* Container for all text and buttons below the image */
+.vehicle-card-info-container {
+  margin: 0.5em 1em;
+}
+
+/* Row containing model name and year badge */
+.vehicle-card-title-and-year-container,
+.vehicle-card-car-details,
+.vehicle-card-button-and-price {
+  display: flex;
+}
+
+.vehicle-card-button-and-price {
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.vehicle-card-title-and-year-container,
+.vehicle-card-car-details {
+  margin: 0.75em 0;
+}
+
+.vehicle-card-title-and-year-container {
+  justify-content: space-between;
+}
+
+.vehicle-card-year,
+.vehicle-card-title {
+  margin: auto 0;
+}
+
+.car-detail-wrapper {
+  display: flex;
+  margin-right: 1.4375em;
+}
+
+/* 
+  styling/typography - matching inventory page
+*/
+.car-detail-wrapper > h3 {
+  font-weight: 300;
+  font-family: "Montserrat";
+}
+
+.vehicle-card-year {
+  padding: 0.2em 0.45em;
+  color: var(--green-color);
+}
+
+.vehicle-card-year-container {
+  background-color: #a7d8d0;
+  align-self: flex-start;
+  border-radius: 100px;
+}
+
+.vehicle-card-title,
+.vehicle-card-year,
+.vehicle-card-button {
+  font-family: "Roboto";
+}
+
+.vehicle-card-year {
+  font-weight: 400;
+}
+
+.vehicle-card-title {
+  font-size: 1.875em;
+}
+
+.vehicle-card-title,
+.vehicle-card-button {
+  font-weight: 700;
+}
+
+.vehicle-card-button {
+  display: flex;
+  padding: 0.75em 1.5em;
+  background-color: var(--navy-color);
+  font-size: 0.875em;
+  color: var(--white-color);
+  border-radius: 5px;
+}
+
+.vehicle-card-button:hover {
+  cursor: pointer;
+}
+
+.vehicle-card-button > img {
+  margin-right: 1.125em;
+}
+
+/* Remove button (X) in top right corner of each card */
+.remove-vehicle-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 1;
+  transition: background-color 0.2s;
+}
+
+/* Hover effect for remove button */
+.remove-vehicle-btn:hover {
+  background-color: rgba(220, 53, 69, 0.8);
+}
+
+/* Container for the comparison table */
+.comparison-table-container {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The comparison table itself */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header row of the table */
+.comparison-table thead tr {
+  background-color: #f8f9fa;
+}
+
+/* Table header cells (Specification, Model R, Model R) */
+.spec-label-header,
+.vehicle-column-header {
+  padding: 1.5rem 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+/* Left header cell ("Specification") */
+.spec-label-header {
+  text-align: left;
+  width: 30%;
+}
+
+/* Right header cells (vehicle model names) */
+.vehicle-column-header {
+  text-align: center;
+  width: 35%;
+}
+
+/* All table body rows */
+.comparison-table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Even rows (alternating background) */
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Odd rows (alternating background) */
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Left column cells (specification names) */
+.spec-label {
+  padding: 1.5rem 1rem;
+  font-weight: 600;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}
+
+/* Right column cells (specification values) */
+.spec-value {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #666;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .compare-vehicles-container > h1 {
+    font-size: 2.5rem;
+    margin-left: 0.2em;
+    margin-bottom: 0.8em;
+    text-align: center;
+  }
+  
+  /* Stack cards vertically on mobile */
+  .vehicle-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Full width cards on mobile - matching inventory responsive */
+  .vehicle-card {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  
+  .vehicle-card-title {
+    font-size: 1.5em;
+  }
+  
+  .vehicle-card-car-details {
+    flex-wrap: wrap;
+  }
+  
+  .car-detail-wrapper {
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  .vehicle-card-button-and-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+  
+  .vehicle-card-button {
+    padding: 0.5em 1em;
+    font-size: 0.75em;
+  }
+  
+  .comparison-table-container {
+    max-width: 100%;
+    margin: 2rem 15px 0 15px;
+  }
+}
+

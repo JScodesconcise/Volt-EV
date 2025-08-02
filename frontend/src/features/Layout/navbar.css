@@ -32,3 +32,32 @@
 .cart-image:hover {
 	cursor: pointer;
 }
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.navbar-container {
+		min-height: 10vh;
+		padding: 0 20px;
+	}
+	
+	.nav-items {
+		width: 100%;
+		justify-content: space-between;
+	}
+	
+	.nav-items > * {
+		margin-right: 0;
+	}
+	
+	.main-loan-calculator,
+	.main-signup,
+	.main-login {
+		font-size: 1rem;
+	}
+	
+	.cart-logo {
+		width: 22px;
+		height: 26px;
+	}
+}

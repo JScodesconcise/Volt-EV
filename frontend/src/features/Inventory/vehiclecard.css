@@ -87,3 +87,38 @@
 .vehicle-card-button > img {
 	margin-right: 1.125em;
 }
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.vehicle-card {
+		width: 100%;
+		max-width: 400px;
+		margin-right: 0;
+		margin-bottom: 1em;
+	}
+	
+	.vehicle-card-title {
+		font-size: 1.5em;
+	}
+	
+	.vehicle-card-car-details {
+		flex-wrap: wrap;
+	}
+	
+	.car-detail-wrapper {
+		margin-right: 1em;
+		margin-bottom: 0.5em;
+	}
+	
+	.vehicle-card-button-and-price {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5em;
+	}
+	
+	.vehicle-card-button {
+		padding: 0.5em 1em;
+		font-size: 0.75em;
+	}
+}

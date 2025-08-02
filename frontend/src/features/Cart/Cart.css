@@ -206,3 +206,78 @@
 .car-counter-button-minus:hover {
 	cursor: pointer;
 }
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.shopping-cart-container {
+		flex-direction: column;
+	}
+	
+	.cart-display {
+		width: 100%;
+		min-height: 80vh;
+		order: 2;
+	}
+	
+	.cart-blur {
+		width: 100%;
+		min-height: 20vh;
+		order: 1;
+	}
+	
+	.shopping-cart-title {
+		font-size: 2.5em;
+		margin-top: 0.5em;
+	}
+	
+	.cart-total-price {
+		width: 90%;
+	}
+	
+	.cart-buttons {
+		width: 90%;
+		flex-direction: column;
+		gap: 1em;
+		margin: 2em 0;
+	}
+	
+	.cart-buttons > * {
+		font-size: 1rem;
+		padding: 0.8em;
+	}
+	
+	.cart-item {
+		width: 90%;
+		flex-direction: column;
+		align-items: center;
+		padding: 1em 0;
+	}
+	
+	.vehicle-picture-cart {
+		width: 60%;
+		margin-bottom: 1em;
+	}
+	
+	.cart-vehicle-price-remove {
+		text-align: center;
+		margin-top: 1em;
+	}
+	
+	.cart-vehicle-price-remove > h3 {
+		margin-bottom: 1em;
+	}
+	
+	.vehicle-checkout-title {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	
+	.vehicle-checkout-colour {
+		text-align: center;
+	}
+	
+	.cart-item-wrapper {
+		max-height: 40vh;
+	}
+}

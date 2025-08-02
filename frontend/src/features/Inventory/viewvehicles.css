@@ -17,3 +17,25 @@
 	justify-content: space-evenly;
 	max-width: 80%;
 }
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.inventory-container > h1 {
+		font-size: 2.5rem;
+		margin-left: 0.2em;
+		margin-bottom: 0.8em;
+		text-align: center;
+	}
+	
+	.view-vehicles-sidebar-and-cards {
+		flex-direction: column;
+		padding: 0 15px;
+	}
+	
+	.vehicle-card-wrapper {
+		max-width: 100%;
+		justify-content: center;
+	}
+}
+

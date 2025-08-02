@@ -87,3 +87,45 @@ h1 {
 .home-loan-calculator:hover {
 	color: var(--brown-color);
 }
+
+/* Responsive Design */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+	.home-page {
+		background-position: center;
+		background-size: cover;
+	}
+	
+	nav {
+		height: 10vh;
+		padding: 0 20px;
+	}
+	
+	.nav-components {
+		width: 100%;
+		justify-content: right;
+	}
+	
+	.nav-components > * {
+		margin-right: 30px;
+		font-size: 1rem;
+	}
+	
+	.home-components {
+		margin-top: 2em;
+		padding: 0 20px;
+		text-align: center;
+	}
+	
+	.home-components > h1 {
+		font-size: 3rem;
+		line-height: 1.2;
+	}
+	
+	.shop-now-home {
+		font-size: 1.25rem;
+		padding: 0.5em 1em;
+		margin-top: 1.5em;
+	}
+}
+
