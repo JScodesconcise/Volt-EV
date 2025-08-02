@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-interface VehicleRepository extends MongoRepository<Vehicle, String> {
+public interface VehicleRepository extends MongoRepository<Vehicle, String> {
     Page<Vehicle> findByColour(String colour, Pageable page);
     Page<Vehicle> findByColourInAndYearBetweenAndPriceBetween(List<String> colours, int startYear, int endYear,
                                                               int startPrice, int endPrice, Pageable page);
