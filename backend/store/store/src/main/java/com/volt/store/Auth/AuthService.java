@@ -5,6 +5,8 @@ import com.volt.store.Auth.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthService {
 
@@ -27,6 +29,7 @@ public class AuthService {
     }
 
     public User findByEmail(String email) {
-        return null;
+        Optional<User> op = userRepository.findByEmail(email);
+        return op.get();
     }
 }

@@ -5,31 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55becce-a8f0-4c42-aff6-f423e9ab1460" name="Changes" comment="abc">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/contexts/ShoppingCartContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/contexts/ShoppingCartContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Admin/AddVehicle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Admin/AddVehicle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Admin/addvehicles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Admin/addvehicles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Authentication/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Authentication/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Cart/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Cart/Checkout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/vehiclecard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/vehiclecard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehicles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehicles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Layout/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Layout/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

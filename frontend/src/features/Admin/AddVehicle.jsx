@@ -18,6 +18,7 @@ function AddVehicle() {
 		justifyContent: "center",
 		alignItems: "center",
 	};
+
 	const focusedStyle = {};
 	const acceptStyle = {};
 	const rejectStyle = {};

@@ -1,10 +1,13 @@
 package com.volt.store.Auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+
+record UserDTO(String role, String userId){}
 
 @RestController
 @RequestMapping("/api/auth")
@@ -24,18 +27,14 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public Map<String, String> login(@RequestBody User user) {
+    public ResponseEntity<UserDTO> login(@RequestBody User user) {
         boolean success = authService.authenticateUser(user.getEmail(), user.getPassword());
-        Map<String, String> response = new HashMap<>();
 
         if (success) {
             User found = authService.findByEmail(user.getEmail());
-            response.put("message", "Login successful");
-            response.put("role", found.getRole());
+            return ResponseEntity.ok(new UserDTO(found.getRole(), found.getId()));
         } else {
-            response.put("message", "Invalid credentials");
+            return ResponseEntity.status(401).body(new UserDTO("", ""));
         }
-
-        return response;
     }
 }
