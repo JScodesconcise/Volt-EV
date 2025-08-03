@@ -9,6 +9,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.UUID;
 
 public class VehicleDTO {
+    @JsonProperty(access = Access.READ_ONLY)
+    private String id;
     @JsonProperty(access = Access.WRITE_ONLY)
     private MultipartFile image;
     private int price;
@@ -39,6 +41,14 @@ public class VehicleDTO {
 
     public void setColour(String colour) {
         this.colour = colour;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setDrivetrain(String drivetrain) {

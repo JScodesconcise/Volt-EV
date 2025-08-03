@@ -13,6 +13,7 @@ import AddVehicle from "./features/Admin/AddVehicle.jsx";
 import Login from "./features/Authentication/Login.jsx";
 import Register from "./features/Authentication/Register.jsx";
 import AdminDashboard from "./features/Admin/AdminDashboard.jsx";
+import CompareVehicles from "./features/CompareVehicles/CompareVehicles.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -31,6 +32,7 @@ root.render(
 						<Route path="/login" element={<Login />} />
 						<Route path="/register" element={<Register />} />
 						<Route path="/admin" element={<AdminDashboard />} />
+						<Route path="/compare" element={<CompareVehicles />} />
 					</Routes>
 				</BrowserRouter>
 			</AuthProvider>

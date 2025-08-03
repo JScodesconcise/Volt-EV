@@ -8,7 +8,12 @@ import axios from "axios";
 import { Slider } from "@mui/material";
 import { useDebouncedCallback } from "../../hooks/useDebouncedCallback.jsx";
 
-function ViewVehiclesSideBar({ vehicles, setVehicles }) {
+function ViewVehiclesSideBar({
+	vehicles,
+	setVehicles,
+	compareChecked,
+	setCompareChecked,
+}) {
 	const sideBarRef = useRef(null);
 
 	const [priceChecked, setPriceChecked] = useState(false);
@@ -205,6 +210,8 @@ function ViewVehiclesSideBar({ vehicles, setVehicles }) {
 		}
 	}
 
+	function handleCompareClick() {}
+
 	return (
 		<div ref={sideBarRef} className="view-vehicles-side-bar">
 			<div className="filter-vehicle price">
@@ -317,6 +324,14 @@ function ViewVehiclesSideBar({ vehicles, setVehicles }) {
 						<label htmlFor="dealId">Deals</label>
 					</div>
 				</div>
+			</div>
+			<div className="compare-two-vehicles">
+				<h3 className="compare-vehicles-title">Compare: </h3>
+				<input
+					type="checkbox"
+					checked={compareChecked}
+					onClick={() => setCompareChecked(!compareChecked)}
+				></input>
 			</div>
 		</div>
 	);

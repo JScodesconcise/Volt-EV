@@ -51,7 +51,7 @@ public class VehicleController {
                                                         @RequestParam(defaultValue = "30000") int startPrice,
                                                         @RequestParam(defaultValue = "100000") int endPrice){
 
-
+        System.out.println();
         List<String> colourList = colours.isEmpty() ? new ArrayList<>() : colours.get();
 
         List<VehicleDTO> res = vehicleService.getVehicles(page, sortBy, colourList, startYear, endYear, startPrice, endPrice)
