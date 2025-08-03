@@ -15,7 +15,6 @@ public abstract class VehicleMapper {
     @Autowired
     protected FileService fileService;
 
-    @Mapping(target = "id", ignore = true)
     @Mapping(target="image", expression="java(src.getImage().getOriginalFilename())")
     public abstract Vehicle VechicleDTOtoVehicle(VehicleDTO src);
 

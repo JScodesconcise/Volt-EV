@@ -9,10 +9,14 @@ import { useShoppingCart } from "../../hooks/useShoppingCart.jsx";
 import axios from "axios";
 import { useDebouncedCallback } from "../../hooks/useDebouncedCallback.jsx";
 import { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router";
 
 function ViewVehicles() {
 	const { visibility, setVisibility } = useShoppingCart();
 	const [vehicles, setVehicles] = useState([]);
+	const [compareChecked, setCompareChecked] = useState(false);
+	const [compareList, setCompareList] = useState([]);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		axios
@@ -25,6 +29,23 @@ function ViewVehicles() {
 			});
 	}, []);
 
+	function handleCompare(id) {
+		if (compareList.includes(id)) {
+			setCompareList(compareList.filter((item) => item !== id));
+		} else {
+			if (compareList.length === 1) {
+				console.log("now here");
+				const VehicleArr = [];
+				VehicleArr.push(vehicles[id]);
+				VehicleArr.push(vehicles[compareList[0]]);
+				setCompareList([]);
+				//navigate("/compare", { state: { VehicleArr } });
+			} else {
+				setCompareList([id]);
+			}
+		}
+	}
+
 	return (
 		<>
 			<Toaster />
@@ -32,7 +53,12 @@ function ViewVehicles() {
 				<Navbar></Navbar>
 				<h1>Inventory</h1>
 				<div className="view-vehicles-sidebar-and-cards">
-					<ViewVehiclesSideBar vehicles={vehicles} setVehicles={setVehicles} />
+					<ViewVehiclesSideBar
+						vehicles={vehicles}
+						setVehicles={setVehicles}
+						compareChecked={compareChecked}
+						setCompareChecked={setCompareChecked}
+					/>
 					<div className="vehicle-card-wrapper">
 						{vehicles.map((car, i) => (
 							<VehicleCard
@@ -48,8 +74,11 @@ function ViewVehicles() {
 								horsepower={car.horsepower}
 								battery={car.battery}
 								efficiency={car.efficiency}
-								key={`car ${i}`}
-								id={`car ${i}`}
+								key={car.id}
+								id={car.id}
+								handleCompare={handleCompare}
+								compareChecked={compareChecked}
+								i={`${i}`}
 							/>
 						))}
 					</div>

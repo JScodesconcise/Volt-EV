@@ -40,10 +40,13 @@ public class VehicleService {
         if(sortBy.isEmpty() && colours.isEmpty()){
             return vehicleRepository.findByYearBetweenAndPriceBetween(startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by("_id")));
         }else if (sortBy.isEmpty()){
+            System.out.println("here");
             return vehicleRepository.findByColourInAndYearBetweenAndPriceBetween(colours, startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by("_id")));
         }else if(colours.isEmpty()){
+            System.out.println("here1");
             return vehicleRepository.findByYearBetweenAndPriceBetween(startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by(sortBy).descending()));
         }else{
+            System.out.println("here2");
             return vehicleRepository.findByColourInAndYearBetweenAndPriceBetween(colours, startYear, endYear, startPrice, endPrice, PageRequest.of(page, 9, Sort.by(sortBy)));
         }
     }

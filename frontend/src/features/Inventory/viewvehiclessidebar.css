@@ -8,7 +8,8 @@
 	min-height: 100vh;
 }
 .filter-vehicle-title,
-.sort-by-title {
+.sort-by-title,
+.compare-vehicles-title {
 	font-family: "roboto";
 	font-weight: 400;
 	font-size: 1.25rem;
@@ -19,7 +20,8 @@
 	margin-bottom: 0.5em;
 }
 
-.filter-vehicle {
+.filter-vehicle,
+.sort-by-container {
 	margin-bottom: 4em;
 }
 .color-filter-choices-container {
@@ -75,7 +77,6 @@
 	border: 3px solid;
 }
 
-
 /* Responsive Design */
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
@@ -87,21 +88,21 @@
 		min-height: auto;
 		padding: 0 15px;
 	}
-	
+
 	.filter-vehicle {
 		margin-bottom: 2em;
 	}
-	
+
 	.filter-vehicle-title,
 	.sort-by-title {
 		font-size: 1.2rem;
 		text-align: center;
 	}
-	
+
 	.color-filter-choices-container {
 		justify-content: center;
 	}
-	
+
 	.colour-filter-choice {
 		height: 50px;
 		width: 50px;
@@ -109,16 +110,16 @@
 		margin-right: 0.3em;
 		margin-bottom: 0.5em;
 	}
-	
+
 	.sorting-checkbox-container {
 		align-items: center;
 	}
-	
+
 	.sorting-checkbox > label {
 		font-size: 1.1rem;
 		margin-left: 0.5em;
 	}
-	
+
 	.filter-vehicle-title-wrapper {
 		justify-content: center;
 	}

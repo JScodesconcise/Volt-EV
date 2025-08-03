@@ -18,6 +18,9 @@ function VehicleCard({
 	colour,
 	price,
 	id,
+	handleCompare,
+	compareChecked,
+	i,
 }) {
 	const { cartItems, setCartItems, visibility } = useShoppingCart();
 
@@ -35,6 +38,7 @@ function VehicleCard({
 			horsepower: horsepower,
 			colour: colour,
 			quantity: 1,
+			i: i,
 			id: id,
 		};
 		if (cartItems.length === 0) {
@@ -75,9 +79,14 @@ function VehicleCard({
 			JSON.stringify(filterVehicle(o2, exclude))
 		);
 	}
-
+	function handleViewOrCompare(e) {
+		if (compareChecked) {
+			// console.log(id);
+			handleCompare(id);
+		}
+	}
 	return (
-		<div className="vehicle-card">
+		<div className="vehicle-card" onClick={handleViewOrCompare}>
 			<img className="vehicle-card-display-image" src={image} />
 			<div className="vehicle-card-info-container">
 				<div className="vehicle-card-title-and-year-container">
