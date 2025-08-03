@@ -25,6 +25,16 @@ public class VehicleDTO {
     private String imageUrl;
     private String imageKey;
 
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public MultipartFile getImage(){
         return this.image;
     }
@@ -116,12 +126,15 @@ public class VehicleDTO {
     public void setEfficiency(int efficiency) {
         this.efficiency = efficiency;
     }
+
     public void setImageUrl(String imageUrl){
         this.imageUrl = imageUrl;
     }
+
     public String getImageKey(){
         return this.imageKey;
     }
+
     public void setImageKey(String imageKey){
         this.imageKey = imageKey;
     }
