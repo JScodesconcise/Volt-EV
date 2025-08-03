@@ -53,7 +53,6 @@
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" afterDir="false" />
