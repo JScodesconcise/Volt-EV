@@ -18,10 +18,10 @@ public class VehicleController {
 
     private VehicleService vehicleService;
     private FileService fileService;
-    private VehicleMapperImpl vehicleMapper;
+    private VehicleMapper vehicleMapper;
 
     public VehicleController(
-            VehicleService vehicleService, FileService fileService, VehicleMapperImpl vehicleMapper
+            VehicleService vehicleService, FileService fileService, VehicleMapper vehicleMapper
     ){
         this.vehicleService = vehicleService;
         this.fileService = fileService;
@@ -61,4 +61,47 @@ public class VehicleController {
 
         return ResponseEntity.ok(res);
     }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<String> updateVehicle(@PathVariable String id, @RequestBody Vehicle updatedVehicle) {
+        try {
+            Optional<Vehicle> existingVehicleOpt = vehicleService.getVehicleById(id);
+
+            if (existingVehicleOpt.isEmpty()) {
+                return ResponseEntity.status(404).body("Vehicle not found.");
+            }
+
+            Vehicle existingVehicle = existingVehicleOpt.get();
+
+            // Update all fields
+            existingVehicle.setYear(updatedVehicle.getYear());
+            existingVehicle.setPrice(updatedVehicle.getPrice());
+            existingVehicle.setDrivetrain(updatedVehicle.getDrivetrain());
+            existingVehicle.setColour(updatedVehicle.getColour());
+            existingVehicle.setRange(updatedVehicle.getRange());
+            existingVehicle.setAcceleration(updatedVehicle.getAcceleration());
+            existingVehicle.setHorsepower(updatedVehicle.getHorsepower());
+            existingVehicle.setBattery(updatedVehicle.getBattery());
+            existingVehicle.setCharging(updatedVehicle.getCharging());
+            existingVehicle.setEfficiency(updatedVehicle.getEfficiency());
+
+            vehicleService.updateVehicle(existingVehicle);
+
+            return ResponseEntity.ok("Vehicle updated successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error updating vehicle.");
+        }
+    }
+
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteVehicle(@PathVariable String id) {
+        try {
+            vehicleService.deleteVehicleById(id);
+            return ResponseEntity.ok("Vehicle deleted successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to delete vehicle.");
+        }
+    }
+
 }
