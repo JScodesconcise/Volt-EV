@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import garbageicon from "../../Media/garbageicon.svg";
 import blackModelRPicture from "../../Media/EV black view.png";
 import plusicon from "../../Media/plus.svg";
@@ -12,6 +12,7 @@ import { useShoppingCart } from "../../hooks/useShoppingCart.jsx";
 function Cart() {
 	const { setVisibility, cartItems, setCartItems } = useShoppingCart();
 	const [total, setTotal] = useState(0);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		let count = 0;
@@ -19,7 +20,7 @@ function Cart() {
 			count += parseInt(cartItems[i].price.replace("$", "").replace(" ", ""));
 		}
 		setTotal(count);
-	}, [total]);
+	}, [cartItems]);
 
 	return (
 		<div className="shopping-cart-container">
@@ -48,7 +49,13 @@ function Cart() {
 							<h2 className="cart-total-price-dollar">{`$ ${total}`}</h2>
 						</div>
 						<div className="cart-buttons">
-							<button className="continue-shopping-button">
+							<button 
+								className="continue-shopping-button"
+								onClick={() => {
+									setVisibility(false);
+									navigate("/inventory");
+								}}
+							>
 								<div className="button-image-title-container continue-shopping">
 									<img src={arrowleft} />
 									Continue Shopping

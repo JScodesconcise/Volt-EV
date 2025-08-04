@@ -18,6 +18,7 @@ import { AuthProvider } from "./contexts/AuthContext.jsx";
 import UsageReportChart from "./features/Admin/UsageReportChart.jsx"; 
 import SalesReport from "./features/Admin/SalesReport.jsx";
 import UsageTracker from "./features/Admin/UsageTracker.jsx";
+import Chatbot from "./features/Chatbot/Chatbot.jsx";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -28,6 +29,7 @@ root.render(
 			<AuthProvider>
 				<BrowserRouter>
 					<UsageTracker />
+					<Chatbot />
 					<Routes>
 						<Route path="/" element={<App />} />
 						<Route path="/inventory" element={<ViewVehicles />} />

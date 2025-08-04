@@ -1,4 +1,4 @@
-//package com.volt.store.vehicles;
+package com.volt.store.vehicles;//package com.volt.store.vehicles;
 //
 //import com.volt.store.vehicles.Vehicle;
 //import com.volt.store.vehicles.VehicleDTO;
