@@ -27,8 +27,6 @@ public class VehicleDTO {
     private String imageUrl;
     private String imageKey;
 
-    private String id;
-
     public String getId() {
         return id;
     }
@@ -51,14 +49,6 @@ public class VehicleDTO {
 
     public void setColour(String colour) {
         this.colour = colour;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public void setDrivetrain(String drivetrain) {
