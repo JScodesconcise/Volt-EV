@@ -27,16 +27,6 @@ public class VehicleDTO {
     private String imageUrl;
     private String imageKey;
 
-    private String id;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public MultipartFile getImage(){
         return this.image;
     }
