@@ -5,60 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55becce-a8f0-4c42-aff6-f423e9ab1460" name="Changes" comment="abc">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_annotations_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_apache_client_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_arns_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_auth_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_query_protocol_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_xml_protocol_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_checksums_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_checksums_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_crt_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_endpoints_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_aws_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_aws_eventstream_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_client_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_identity_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_json_utils_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_metrics_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_netty_nio_client_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_profiles_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_protocol_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_regions_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_retries_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_retries_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_s3_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_sdk_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_third_party_jackson_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_utils_2_29_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/store/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

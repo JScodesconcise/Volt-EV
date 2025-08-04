@@ -39,7 +39,7 @@ function ViewVehicles() {
 				VehicleArr.push(vehicles[id]);
 				VehicleArr.push(vehicles[compareList[0]]);
 				setCompareList([]);
-				//navigate("/compare", { state: { VehicleArr } });
+				navigate("/compare", { state: { VehicleArr } });
 			} else {
 				setCompareList([id]);
 			}
