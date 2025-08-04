@@ -1,63 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="c55becce-a8f0-4c42-aff6-f423e9ab1460" name="Changes" comment="abc">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_122_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_annotations_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_apache_client_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_arns_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_auth_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_query_protocol_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_aws_xml_protocol_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_checksums_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_checksums_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_crt_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_endpoints_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_aws_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_aws_eventstream_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_auth_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_http_client_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_identity_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_json_utils_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_metrics_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_netty_nio_client_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_profiles_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_protocol_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_regions_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_retries_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_retries_spi_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_s3_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_sdk_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_third_party_jackson_core_2_29_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__software_amazon_awssdk_utils_2_29_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/store/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/vehicles/VehicleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/test/java/com/volt/store/vehicles/VehicleMappingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/VehicleCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehiclesSideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/viewvehiclessidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/com/volt/store/Auth/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Admin/AddVehicle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Admin/AddVehicle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Authentication/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Authentication/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Cart/Cart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Cart/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Cart/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/features/Inventory/ViewVehicles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,64 +22,32 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2zt2S7HviDgT1JgKfV9wzY8xjxp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="30kSpDCQonAx5RDwwKkxyhueSkA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="ToolWindowBuild.ShowToolbar" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lucas\Volt-EV\volt-ev\backend\store\store\src\main\java\com\volt\store\Auth" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.volt.store.vehicles" />
-    </key>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.StoreApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="StoreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.volt.store.StoreApplication" />
-      <module name="store" />
+      <module name="main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.volt.store.*" />
@@ -139,38 +64,14 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c55becce-a8f0-4c42-aff6-f423e9ab1460" name="Changes" comment="abc" />
-      <created>1752536045584</created>
+      <changelist id="9d6f0a7d-2cf7-49c3-b98b-0888b90a5122" name="Changes" comment="" />
+      <created>1754170258332</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1752536045584</updated>
+      <updated>1754170258332</updated>
     </task>
-    <task id="LOCAL-00001" summary="abc">
-      <created>1753497444588</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1753497444588</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="abc" />
-    <option name="LAST_COMMIT_MESSAGE" value="abc" />
   </component>
 </project>

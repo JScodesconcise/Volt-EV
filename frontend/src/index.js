@@ -15,6 +15,10 @@ import Register from "./features/Authentication/Register.jsx";
 import AdminDashboard from "./features/Admin/AdminDashboard.jsx";
 import CompareVehicles from "./features/CompareVehicles/CompareVehicles.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
+import UsageReportChart from "./features/Admin/UsageReportChart.jsx"; 
+import SalesReport from "./features/Admin/SalesReport.jsx";
+import UsageTracker from "./features/Admin/UsageTracker.jsx";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,6 +27,7 @@ root.render(
 		<ShoppingCartProvider>
 			<AuthProvider>
 				<BrowserRouter>
+					<UsageTracker />
 					<Routes>
 						<Route path="/" element={<App />} />
 						<Route path="/inventory" element={<ViewVehicles />} />
@@ -32,6 +37,8 @@ root.render(
 						<Route path="/login" element={<Login />} />
 						<Route path="/register" element={<Register />} />
 						<Route path="/admin" element={<AdminDashboard />} />
+						<Route path="/usage-report" element={<UsageReportChart />} />
+						<Route path="/sales-report" element={<SalesReport />} />
 						<Route path="/compare" element={<CompareVehicles />} />
 					</Routes>
 				</BrowserRouter>

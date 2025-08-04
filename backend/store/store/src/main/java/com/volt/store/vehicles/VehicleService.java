@@ -23,6 +23,18 @@ public class VehicleService {
         vehicleRepository.insert(vehicle);
     }
 
+    public void deleteVehicleById(String id) { vehicleRepository.deleteById(id); }
+
+    public Optional<Vehicle> getVehicleById(String id) {
+        return vehicleRepository.findById(id);
+    }
+
+    public void updateVehicle(Vehicle vehicle) {
+        vehicleRepository.save(vehicle); // this will update if ID exists
+    }
+
+
+
     public Page<Vehicle> getVehicles(int page, String sortBy, List<String> colours, int startYear,
                                      int endYear, int startPrice, int endPrice){
         if(sortBy.isEmpty() && colours.isEmpty()){

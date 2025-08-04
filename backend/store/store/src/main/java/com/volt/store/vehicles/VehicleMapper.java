@@ -20,6 +20,7 @@ public abstract class VehicleMapper {
 
     @Mapping(target = "image", ignore = true)
     @Mapping(target = "imageKey", source = "image")
+    @Mapping(target = "id", source = "id")
     public abstract VehicleDTO VehicleToDTO(Vehicle src);
 
     public VehicleDTO VehicleDTOattatchUrl(VehicleDTO src){

@@ -147,3 +147,69 @@ h1 {
 .primary-btn:hover {
   background-color: #ff914d;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.modal form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal form input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+}
+.cancel-btn {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
