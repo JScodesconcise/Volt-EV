@@ -36,10 +36,17 @@ function ViewVehicles() {
 			if (compareList.length === 1) {
 				console.log("now here");
 				const VehicleArr = [];
-				VehicleArr.push(vehicles[id]);
-				VehicleArr.push(vehicles[compareList[0]]);
-				setCompareList([]);
-				navigate("/compare", { state: { VehicleArr } });
+				const vehicle1 = vehicles.find(v => v.id === id);
+				const vehicle2 = vehicles.find(v => v.id === compareList[0]);
+				
+				if (vehicle1 && vehicle2) {
+					VehicleArr.push(vehicle1);
+					VehicleArr.push(vehicle2);
+					setCompareList([]);
+					navigate("/compare", { state: { VehicleArr } });
+				} else {
+					console.error("Could not find vehicles with IDs:", id, compareList[0]);
+				}
 			} else {
 				setCompareList([id]);
 			}
