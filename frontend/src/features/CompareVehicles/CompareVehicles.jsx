@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import "./CompareVehicles.css";
 import Navbar from "../Layout/Navbar";
 import rangeLogo from "../../Media/zap.svg";
@@ -7,8 +8,9 @@ import drivetrainLogo from "../../Media/gauge.svg";
 import cartLogo from "../../Media/cart-vehicle-card.svg";
 import evBlackImage from "../../Media/EV black view.png";
 import evOliveImage from "../../Media/EV Olive View.png";
+import axios from "axios";
+import { useShoppingCart } from "../../hooks/useShoppingCart";
 
-// Default fallback images
 const defaultImages = {
   black: evBlackImage,
   olive: evOliveImage
@@ -18,73 +20,129 @@ function CompareVehicles() {
   const [vehiclesToCompare, setVehiclesToCompare] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const { cartItems, setCartItems } = useShoppingCart();
 
   useEffect(() => {
-    fetchVehiclesForComparison();
-  }, []);
-
-  const fetchVehiclesForComparison = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+    console.log("Loading vehicles for comparison...");
+    
+    if (location.state && location.state.VehicleArr && location.state.VehicleArr.length > 0) {
+      const passedVehicles = location.state.VehicleArr;
+      console.log("Vehicle data received from ViewVehicles:", passedVehicles);
       
-      // Get URL parameters for specific vehicle comparison
-      const urlParams = new URLSearchParams(window.location.search);
-      const vehicle1Id = urlParams.get('vehicle1Id');
-      const vehicle2Id = urlParams.get('vehicle2Id');
+      const validVehicles = passedVehicles.filter(vehicle => vehicle && vehicle.id);
+      console.log("Valid vehicles from passed data:", validVehicles);
       
-      let url = 'http://localhost:8080/vehicle/compare';
-      
-      if (vehicle1Id && vehicle2Id) {
-        url += `?vehicle1Id=${vehicle1Id}&vehicle2Id=${vehicle2Id}`;
+      if (validVehicles.length > 0) {
+        const transformedVehicles = validVehicles.map((vehicle, index) => {
+          console.log(`Processing vehicle ${index}:`, vehicle);
+          
+          let imageUrl = vehicle.imageUrl || vehicle.image;
+          
+          if (!imageUrl) {
+            if (vehicle.colour && vehicle.colour.toLowerCase().includes('black')) {
+              imageUrl = evBlackImage;
+            } else if (vehicle.colour && vehicle.colour.toLowerCase().includes('olive')) {
+              imageUrl = evOliveImage;
+            } else {
+              imageUrl = evBlackImage;
+            }
+          }
+          
+          return {
+            id: vehicle.id || `vehicle-${index}`,
+            model: 'Model R',
+            year: vehicle.year || 2023,
+            price: vehicle.price || 0,
+            imageUrl: imageUrl,
+            maxRange: vehicle.range || 0,
+            horsepower: vehicle.horsepower || 0,
+            acceleration: vehicle.acceleration || 0,
+            batteryCapacity: vehicle.battery || 0,
+            chargingPower: vehicle.charging || 0,
+            efficiency: vehicle.efficiency || 0,
+            driveType: vehicle.drivetrain || 'AWD'
+          };
+        });
+        
+        console.log("Transformed vehicles:", transformedVehicles);
+        setVehiclesToCompare(transformedVehicles);
+        setLoading(false);
+      } else {
+        console.log("No valid vehicles found");
+        setError('No vehicles selected for comparison. Please go back to inventory and select vehicles to compare.');
+        setLoading(false);
       }
-      
-      const response = await fetch(url);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const vehicles = await response.json();
-      
-      // Transform the data to match frontend expectations
-      const transformedVehicles = vehicles.map(vehicle => ({
-        id: vehicle.id,
-        model: vehicle.colour ? `Model ${vehicle.colour.charAt(0).toUpperCase() + vehicle.colour.slice(1)}` : 'Model R',
-        year: vehicle.year,
-        price: vehicle.price,
-        imageUrl: vehicle.image || defaultImages.black,
-        maxRange: vehicle.range,
-        horsepower: vehicle.horsepower,
-        acceleration: vehicle.acceleration,
-        batteryCapacity: vehicle.battery,
-        chargingPower: vehicle.charging,
-        efficiency: vehicle.efficiency,
-        driveType: vehicle.drivetrain || 'AWD'
-      }));
-      
-      setVehiclesToCompare(transformedVehicles);
-    } catch (err) {
-      console.error('Error fetching vehicles for comparison:', err);
-      setError('Failed to load vehicles for comparison. Please try again.');
-    } finally {
+    } else {
+      console.log("No vehicle data received");
+      setError('No vehicles selected for comparison. Please go back to inventory and select vehicles to compare.');
       setLoading(false);
     }
-  };
+  }, [location.state]);
 
   const removeVehicleFromComparison = (vehicleId) => {
     const updatedVehicles = vehiclesToCompare.filter(v => v.id !== vehicleId);
     setVehiclesToCompare(updatedVehicles);
   };
 
+  function filterVehicle(o1, exclude) {
+    if (o1 === null || typeof o1 !== "object") return o1;
+
+    return Object.fromEntries(
+      Object.entries(o1)
+        .filter(([k]) => !exclude.includes(k))
+        .map(([k, v]) => [k, filterVehicle(v, exclude)])
+        .sort(([a], [b]) => a.localeCompare(b))
+    );
+  }
+
+  function checkIfEqual(o1, o2, exclude = []) {
+    return (
+      JSON.stringify(filterVehicle(o1, exclude)) ===
+      JSON.stringify(filterVehicle(o2, exclude))
+    );
+  }
+
   const addToCart = (vehicle) => {
-    // Replace with your actual cart functionality
-    alert(`${vehicle.model} would be added to cart! (Demo)`);
-    console.log('Adding to cart:', vehicle);
+    const newItem = {
+      image: vehicle.imageUrl,
+      title: vehicle.model,
+      year: vehicle.year,
+      drivetrain: vehicle.driveType,
+      range: vehicle.maxRange,
+      acceleration: vehicle.acceleration,
+      efficiency: vehicle.efficiency,
+      price: vehicle.price,
+      charging: vehicle.chargingPower,
+      horsepower: vehicle.horsepower,
+      colour: vehicle.model.replace('Model ', ''),
+      quantity: 1,
+      id: vehicle.id,
+    };
+    
+    if (cartItems.length === 0) {
+      setCartItems([...cartItems, newItem]);
+    } else {
+      let flag = false;
+      cartItems.forEach((element) => {
+        if (checkIfEqual(element, newItem, ["image", "quantity"])) {
+          flag = true;
+          setCartItems(
+            cartItems.map((vehicle) =>
+              vehicle === element
+                ? { ...vehicle, quantity: vehicle.quantity + 1 }
+                : vehicle
+            )
+          );
+        }
+      });
+      if (flag === false) {
+        setCartItems([...cartItems, newItem]);
+      }
+    }
   };
 
   const viewDetails = (vehicle) => {
-    // Replace with navigation to vehicle details page
     alert(`Would navigate to ${vehicle.model} details page! (Demo)`);
     console.log('View details:', vehicle);
   };
@@ -93,8 +151,9 @@ function CompareVehicles() {
     return (
       <div className="compare-vehicles-container">
         <Navbar />
+        <Link to="/" className="compare-vehicles-home-link">Home</Link>
         <div className="compare-content">
-          <h1 className="compare-title">Compare Vehicles</h1>
+          <h1>Compare Vehicles</h1>
           <div className="loading-message">Loading vehicles for comparison...</div>
         </div>
       </div>
@@ -105,11 +164,12 @@ function CompareVehicles() {
     return (
       <div className="compare-vehicles-container">
         <Navbar />
+        <Link to="/" className="compare-vehicles-home-link">Home</Link>
         <div className="compare-content">
-          <h1 className="compare-title">Compare Vehicles</h1>
+          <h1>Compare Vehicles</h1>
           <div className="error-message">{error}</div>
-          <button onClick={fetchVehiclesForComparison} className="retry-button">
-            Try Again
+          <button onClick={() => window.history.back()} className="retry-button">
+            Go Back to Inventory
           </button>
         </div>
       </div>
@@ -120,9 +180,13 @@ function CompareVehicles() {
     return (
       <div className="compare-vehicles-container">
         <Navbar />
+        <Link to="/" className="compare-vehicles-home-link">Home</Link>
         <div className="compare-content">
-          <h1 className="compare-title">Compare Vehicles</h1>
+          <h1>Compare Vehicles</h1>
           <div className="no-vehicles-message">No vehicles available for comparison.</div>
+          <button onClick={() => window.history.back()} className="retry-button">
+            Go Back to Inventory
+          </button>
         </div>
       </div>
     );
@@ -131,9 +195,10 @@ function CompareVehicles() {
   return (
     <div className="compare-vehicles-container">
       <Navbar />
+      <Link to="/" className="compare-vehicles-home-link">Home</Link>
+      <h1>Compare Vehicles</h1>
       
       <div className="compare-content">
-        <h1 className="compare-title">Compare Vehicles</h1>
         
         {/* Vehicle Cards Section */}
         <div className="vehicle-cards-grid">
@@ -152,42 +217,45 @@ function CompareVehicles() {
                 alt={vehicle.model}
                 className="vehicle-card-display-image"
                 onError={(e) => {
-                  e.target.src = defaultImages.black;
+                  if (vehicle.colour && vehicle.colour.toLowerCase().includes('olive')) {
+                    e.target.src = evOliveImage;
+                  } else {
+                    e.target.src = evBlackImage;
+                  }
                 }}
               />
               
               <div className="vehicle-card-info-container">
                 <div className="vehicle-card-title-and-year-container">
                   <h1 className="vehicle-card-title">{vehicle.model}</h1>
-                  <div className="vehicle-card-year-badge">{vehicle.year}</div>
+                  <div className="vehicle-card-year-container">
+                    <span className="vehicle-card-year">{vehicle.year}</span>
+                  </div>
                 </div>
                 
                 <div className="vehicle-card-car-details">
-                  <img src={rangeLogo} alt="Range" />
-                  <h3>{vehicle.maxRange} km</h3>
-                  <img src={accelerationLogo} alt="Acceleration" />
-                  <h3>{vehicle.acceleration}s</h3>
-                  <img src={drivetrainLogo} alt="Drivetrain" />
-                  <h3>{vehicle.driveType}</h3>
+                  <div className="car-detail-wrapper">
+                    <img src={rangeLogo} alt="Range" />
+                    <h3>{vehicle.maxRange}km</h3>
+                  </div>
+                  <div className="car-detail-wrapper">
+                    <img src={accelerationLogo} alt="Acceleration" />
+                    <h3>{vehicle.acceleration}s</h3>
+                  </div>
+                  <div className="car-detail-wrapper">
+                    <img src={drivetrainLogo} alt="Drivetrain" />
+                    <h3>{vehicle.driveType}</h3>
+                  </div>
                 </div>
                 
                 <div className="vehicle-card-button-and-price">
                   <h2>${vehicle.price.toLocaleString()}</h2>
                   <button 
-                    className="add-to-cart-btn"
+                    className="vehicle-card-button"
                     onClick={() => addToCart(vehicle)}
                   >
                     <img src={cartLogo} alt="Cart" />
                     Add to Cart
-                  </button>
-                </div>
-                
-                <div className="view-details-section">
-                  <button 
-                    className="view-details-btn"
-                    onClick={() => viewDetails(vehicle)}
-                  >
-                    View Details
                   </button>
                 </div>
               </div>

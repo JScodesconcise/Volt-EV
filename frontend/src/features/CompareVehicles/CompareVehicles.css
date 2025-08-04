@@ -1,29 +1,44 @@
-/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/* Main container for the entire compare vehicles page */
+
 .compare-vehicles-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: white;
 }
 
-/* Content wrapper with max width and centering */
 .compare-content {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Main title "Compare Vehicles" - matching inventory page */
 .compare-vehicles-container > h1 {
   font-family: "Poppins";
   font-weight: 500;
   font-size: 4rem;
+  margin: 0;
   margin-left: 0.45em;
-  margin-bottom: 1.4em;
 }
 
-/* Grid layout for the two vehicle cards - side by side */
+.compare-vehicles-home-link {
+  position: absolute;
+  top: 2.4rem; 
+  left: 2rem;
+  text-decoration: none;
+  color: #1a2e3c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem ;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  border: none; 
+  padding: 0;  
+  z-index: 9999;
+}
+
+.compare-vehicles-home-link:hover {
+  color: #ff9e64;
+}
+
 .vehicle-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -35,26 +50,23 @@
   margin-right: auto;
 }
 
-/* Individual vehicle card styling - matching inventory page exactly */
 .vehicle-card {
   align-self: flex-start;
   border-radius: 5px;
   width: 23.4375em;
   overflow: hidden;
   margin-right: 1.125em;
+  position: relative;
 }
 
-/* Vehicle image at the top of each card */
 .vehicle-card-display-image {
   width: 100%;
 }
 
-/* Container for all text and buttons below the image */
 .vehicle-card-info-container {
   margin: 0.5em 1em;
 }
 
-/* Row containing model name and year badge */
 .vehicle-card-title-and-year-container,
 .vehicle-card-car-details,
 .vehicle-card-button-and-price {
@@ -140,7 +152,6 @@
   margin-right: 1.125em;
 }
 
-/* Remove button (X) in top right corner of each card */
 .remove-vehicle-btn {
   position: absolute;
   top: 0.5rem;
@@ -157,12 +168,10 @@
   transition: background-color 0.2s;
 }
 
-/* Hover effect for remove button */
 .remove-vehicle-btn:hover {
-  background-color: rgba(220, 53, 69, 0.8);
+  background-color: #ff9e64;
 }
 
-/* Container for the comparison table */
 .comparison-table-container {
   background-color: white;
   border-radius: 1rem;
@@ -174,18 +183,15 @@
   margin-right: auto;
 }
 
-/* The comparison table itself */
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Header row of the table */
 .comparison-table thead tr {
   background-color: #f8f9fa;
 }
 
-/* Table header cells (Specification, Model R, Model R) */
 .spec-label-header,
 .vehicle-column-header {
   padding: 1.5rem 1rem;
@@ -195,35 +201,28 @@
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
-
-/* Left header cell ("Specification") */
 .spec-label-header {
   text-align: left;
   width: 30%;
 }
 
-/* Right header cells (vehicle model names) */
 .vehicle-column-header {
   text-align: center;
   width: 35%;
 }
 
-/* All table body rows */
 .comparison-table tbody tr {
   border-bottom: 1px solid #dee2e6;
 }
 
-/* Even rows (alternating background) */
 .comparison-table tbody tr:nth-child(even) {
   background-color: #f8f9fa;
 }
 
-/* Odd rows (alternating background) */
 .comparison-table tbody tr:nth-child(odd) {
   background-color: white;
 }
 
-/* Left column cells (specification names) */
 .spec-label {
   padding: 1.5rem 1rem;
   font-weight: 600;
@@ -232,7 +231,6 @@
   font-size: 0.875rem;
 }
 
-/* Right column cells (specification values) */
 .spec-value {
   padding: 1.5rem 1rem;
   text-align: center;
@@ -245,6 +243,10 @@
 /* Responsive Design */
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
+  .compare-content {
+    padding: 1rem;
+  }
+  
   .compare-vehicles-container > h1 {
     font-size: 2.5rem;
     margin-left: 0.2em;
@@ -252,7 +254,16 @@
     text-align: center;
   }
   
-  /* Stack cards vertically on mobile */
+  .compare-vehicles-home-link {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem !important;
+  }
+  
   .vehicle-cards-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -260,7 +271,6 @@
     padding: 0 15px;
   }
   
-  /* Full width cards on mobile - matching inventory responsive */
   .vehicle-card {
     width: 100%;
     max-width: 400px;
@@ -281,6 +291,10 @@
     margin-bottom: 0.5em;
   }
   
+  .car-detail-wrapper > h3 {
+    font-size: 0.9rem;
+  }
+  
   .vehicle-card-button-and-price {
     flex-direction: column;
     align-items: flex-start;
@@ -292,9 +306,30 @@
     font-size: 0.75em;
   }
   
+  .vehicle-card-button > img {
+    margin-right: 0.5em;
+  }
+  
   .comparison-table-container {
     max-width: 100%;
     margin: 2rem 15px 0 15px;
+    overflow-x: auto;
+  }
+  
+  .comparison-table {
+    min-width: 600px;
+    font-size: 0.875rem;
+  }
+  
+  .spec-label-header,
+  .vehicle-column-header {
+    padding: 1rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .spec-label,
+  .spec-value {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
   }
 }
-

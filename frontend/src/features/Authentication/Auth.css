@@ -55,21 +55,21 @@
 
 .home-link {
   position: absolute;
-  top: 2.6rem !important; 
+  top: 2.4rem; 
   left: 2rem;
   text-decoration: none;
   color: #1a2e3c;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.25rem !important;
+  font-size: 1.25rem;
   font-weight: 700;
   transition: color 0.3s ease;
-  border: none !important; 
-  padding: 0 !important;  
+  border: none; 
+  padding: 0;  
   z-index: 9999;
 }
 
 .home-link:hover {
-  color: #ff9e64 !important;  
+  color: #ff9e64;  
 }
 
 @media screen and (max-width: 768px) {
