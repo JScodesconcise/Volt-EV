@@ -8,7 +8,6 @@ import drivetrainLogo from "../../Media/gauge.svg";
 import cartLogo from "../../Media/cart-vehicle-card.svg";
 import evBlackImage from "../../Media/EV black view.png";
 import evOliveImage from "../../Media/EV Olive View.png";
-import axios from "axios";
 import { useShoppingCart } from "../../hooks/useShoppingCart";
 
 function CompareVehicles() {
