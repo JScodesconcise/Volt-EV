@@ -15,10 +15,10 @@ import Register from "./features/Authentication/Register.jsx";
 import AdminDashboard from "./features/Admin/AdminDashboard.jsx";
 import CompareVehicles from "./features/CompareVehicles/CompareVehicles.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-import UsageReportChart from "./features/Admin/UsageReportChart.jsx"; 
+import UsageReportChart from "./features/Admin/UsageReportChart.jsx";
 import SalesReport from "./features/Admin/SalesReport.jsx";
 import UsageTracker from "./features/Admin/UsageTracker.jsx";
-
+import VehicleDetails from "./features/Inventory/VehicleDetails.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -40,6 +40,7 @@ root.render(
 						<Route path="/usage-report" element={<UsageReportChart />} />
 						<Route path="/sales-report" element={<SalesReport />} />
 						<Route path="/compare" element={<CompareVehicles />} />
+						<Route path="/details/:vehicleId" element={<VehicleDetails />} />
 					</Routes>
 				</BrowserRouter>
 			</AuthProvider>

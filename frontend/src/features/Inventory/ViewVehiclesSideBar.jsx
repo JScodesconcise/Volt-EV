@@ -1,6 +1,5 @@
 import "./viewvehiclessidebar.css";
-import { useEffect, useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import priceTag from "../../Media/Vector.svg";
 import paint from "../../Media/palette.svg";
 import calendar from "../../Media/Group 1.svg";
@@ -41,25 +40,33 @@ function ViewVehiclesSideBar({
 	const minDistanceYear = 10;
 	const minDistancePrice = 10000;
 
+	const getDealParam = () => (dealsChecked ? "&deal=true" : "");
+
 	const debouncedQueryYear = useDebouncedCallback((filters) => {
 		axios
 			.get(
-				`http://localhost:8080/vehicle/getVehicles?page=0&sortBy=${filters.sortBy}&colours=${filters.resultString}&startYear=${filters.firstVal}&endYear=${filters.secondVal}&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}`
+				`http://localhost:8080/vehicle/getVehicles?page=0` +
+					`&sortBy=${filters.sortBy}` +
+					`&colours=${filters.resultString}` +
+					`&startYear=${filters.firstVal}&endYear=${filters.secondVal}` +
+					`&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}` +
+					getDealParam()
 			)
-			.then((response) => {
-				setVehicles(response.data);
-			})
+			.then((response) => setVehicles(response.data))
 			.catch((err) => console.log(err));
 	}, 300);
 
 	const debouncedQueryPrice = useDebouncedCallback((filters) => {
 		axios
 			.get(
-				`http://localhost:8080/vehicle/getVehicles?page=0&sortBy=${filters.sortBy}&colours=${filters.resultString}&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}&startPrice=${filters.firstVal}&endPrice=${filters.secondVal}`
+				`http://localhost:8080/vehicle/getVehicles?page=0` +
+					`&sortBy=${filters.sortBy}` +
+					`&colours=${filters.resultString}` +
+					`&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}` +
+					`&startPrice=${filters.firstVal}&endPrice=${filters.secondVal}` +
+					getDealParam()
 			)
-			.then((response) => {
-				setVehicles(response.data);
-			})
+			.then((response) => setVehicles(response.data))
 			.catch((err) => console.log(err));
 	}, 300);
 
@@ -69,94 +76,82 @@ function ViewVehiclesSideBar({
 
 	function sendSliderRequest(type, firstVal, secondVal) {
 		const resultString =
-			activeColours.length === 0
-				? ""
-				: "&colours=".concat(activeColours.join("&colours="));
-		if (type === "year") {
-			const filters = {
-				sortBy: sortByAxios,
-				resultString: resultString,
-				firstVal: firstVal,
-				secondVal: secondVal,
-			};
-			debouncedQueryYear(filters);
-		} else {
-			const filters = {
-				sortBy: sortByAxios,
-				resultString: resultString,
-				firstVal: firstVal,
-				secondVal: secondVal,
-			};
-			debouncedQueryPrice(filters);
-		}
+			activeColours.length === 0 ? "" : activeColours.join("&colours=");
+		const filters = {
+			sortBy: sortByAxios,
+			resultString,
+			firstVal,
+			secondVal,
+		};
+		type === "year"
+			? debouncedQueryYear(filters)
+			: debouncedQueryPrice(filters);
 	}
 
 	function handleSortRequest(sortBy) {
 		const resultString =
-			activeColours.length === 0
-				? ""
-				: "&colours=".concat(activeColours.join("&colours="));
+			activeColours.length === 0 ? "" : activeColours.join("&colours=");
 		axios
 			.get(
-				`http://localhost:8080/vehicle/getVehicles?page=0&sortBy=${sortBy}&colours=${resultString}&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}`
+				`http://localhost:8080/vehicle/getVehicles?page=0` +
+					`&sortBy=${sortBy}` +
+					`&colours=${resultString}` +
+					`&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}` +
+					`&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}` +
+					getDealParam()
 			)
-			.then((response) => {
-				setVehicles(response.data);
-			})
+			.then((response) => setVehicles(response.data))
 			.catch((err) => console.log(err));
 	}
 
 	function handleColourClick(e) {
-		let resultString;
-		if (activeColours.includes(e.target.id)) {
-			setActiveColours(
-				activeColours.filter((colour) => colour !== e.target.id)
-			);
-			resultString = "";
-		} else {
-			resultString = activeColours
-				.join("&colours=")
-				.concat("&colours=" + e.target.id);
-			setActiveColours([...activeColours, e.target.id]);
-		}
+		const colourId = e.target.id;
+		const newColours = activeColours.includes(colourId)
+			? activeColours.filter((c) => c !== colourId)
+			: [...activeColours, colourId];
+		setActiveColours(newColours);
+
+		const resultString = newColours.join("&colours=");
 		axios
 			.get(
-				`http://localhost:8080/vehicle/getVehicles?page=0&colours=${resultString}&sortBy=${sortByAxios}&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}`
+				`http://localhost:8080/vehicle/getVehicles?page=0` +
+					`&colours=${resultString}` +
+					`&sortBy=${sortByAxios}` +
+					`&startPrice=${priceSliderValue[0]}&endPrice=${priceSliderValue[1]}` +
+					`&startYear=${yearSliderValue[0]}&endYear=${yearSliderValue[1]}` +
+					getDealParam()
 			)
-			.then((response) => {
-				setVehicles(response.data);
-			})
+			.then((response) => setVehicles(response.data))
 			.catch((err) => console.log(err));
 	}
 
-	const handlePriceSliderChange = (event, newValue, activeThumb) => {
+	const handlePriceSliderChange = (e, newValue, activeThumb) => {
 		if (activeThumb === 0) {
-			const new_0 = Math.min(
+			const new0 = Math.min(
 				newValue[0],
 				priceSliderValue[1] - minDistancePrice
 			);
-			console.log("NEW 0:" + new_0);
-			sendSliderRequest("price", new_0, priceSliderValue[1]);
-			setPriceSliderValue([new_0, priceSliderValue[1]]);
+			sendSliderRequest("price", new0, priceSliderValue[1]);
+			setPriceSliderValue([new0, priceSliderValue[1]]);
 		} else {
-			const new_1 = Math.max(
+			const new1 = Math.max(
 				newValue[1],
 				priceSliderValue[0] + minDistancePrice
 			);
-			sendSliderRequest("price", priceSliderValue[0], new_1);
-			setPriceSliderValue([priceSliderValue[0], new_1]);
+			sendSliderRequest("price", priceSliderValue[0], new1);
+			setPriceSliderValue([priceSliderValue[0], new1]);
 		}
 	};
 
-	const handleYearSliderChange = (event, newValue, activeThumb) => {
+	const handleYearSliderChange = (e, newValue, activeThumb) => {
 		if (activeThumb === 0) {
-			const new_0 = Math.min(newValue[0], yearSliderValue[1] - minDistanceYear);
-			sendSliderRequest("year", new_0, yearSliderValue[1]);
-			setYearSliderValue([new_0, yearSliderValue[1]]);
+			const new0 = Math.min(newValue[0], yearSliderValue[1] - minDistanceYear);
+			sendSliderRequest("year", new0, yearSliderValue[1]);
+			setYearSliderValue([new0, yearSliderValue[1]]);
 		} else {
-			const new_1 = Math.max(newValue[1], yearSliderValue[0] + minDistanceYear);
-			sendSliderRequest("year", yearSliderValue[0], new_1);
-			setYearSliderValue([yearSliderValue[0], new_1]);
+			const new1 = Math.max(newValue[1], yearSliderValue[0] + minDistanceYear);
+			sendSliderRequest("year", yearSliderValue[0], new1);
+			setYearSliderValue([yearSliderValue[0], new1]);
 		}
 	};
 
@@ -166,10 +161,11 @@ function ViewVehiclesSideBar({
 			setPriceChecked(false);
 			setRatingChecked(false);
 			setYearChecked(true);
+			setSortByAxios("year");
 			handleSortRequest("year");
 		} else {
-			setSortByAxios("year");
 			setYearChecked(false);
+			setSortByAxios("");
 			handleSortRequest("");
 		}
 	}
@@ -180,23 +176,23 @@ function ViewVehiclesSideBar({
 			setRatingChecked(false);
 			setYearChecked(false);
 			setPriceChecked(true);
+			setSortByAxios("price");
 			handleSortRequest("price");
 		} else {
-			setSortByAxios("price");
 			setPriceChecked(false);
+			setSortByAxios("");
 			handleSortRequest("");
 		}
 	}
 
 	function handleDealsChange(e) {
-		if (e.target.checked) {
-			setYearChecked(false);
-			setPriceChecked(false);
-			setRatingChecked(false);
-			setDealsChecked(true);
-		} else {
-			setDealsChecked(false);
-		}
+		const checked = e.target.checked;
+		setYearChecked(false);
+		setPriceChecked(false);
+		setRatingChecked(false);
+		setDealsChecked(checked);
+
+		handleSortRequest(sortByAxios);
 	}
 
 	function handleRatingChange(e) {
@@ -210,128 +206,99 @@ function ViewVehiclesSideBar({
 		}
 	}
 
-	function handleCompareClick() {}
-
 	return (
 		<div ref={sideBarRef} className="view-vehicles-side-bar">
 			<div className="filter-vehicle price">
 				<div className="title-and-image-filter-container 1">
 					<div className="filter-vehicle-title-wrapper price">
-						<img src={priceTag}></img>
-						<div className="title-filter-wrapper price">
-							<h3 className="filter-vehicle-title 1">Price</h3>
-						</div>
+						<img src={priceTag} alt="Price icon" />
+						<h3 className="filter-vehicle-title 1">Price</h3>
 					</div>
 				</div>
-				<div>
-					<Slider
-						value={priceSliderValue}
-						onChange={handlePriceSliderChange}
-						valueLabelDisplay="auto"
-						getAriaValueText={valuetext}
-						disableSwap
-						min={30000}
-						max={100000}
-					/>
-				</div>
+				<Slider
+					value={priceSliderValue}
+					onChange={handlePriceSliderChange}
+					valueLabelDisplay="auto"
+					getAriaValueText={valuetext}
+					disableSwap
+					min={30000}
+					max={100000}
+				/>
 			</div>
 			<div className="filter-vehicle year">
 				<div className="title-and-image-filter-container 2">
 					<div className="filter-vehicle-title-wrapper calendar">
-						<img src={calendar} />
-						<div className="title-filter-wrapper calendar">
-							<h3 className="filter-vehicle-title 2">Year</h3>
-						</div>
+						<img src={calendar} alt="Year icon" />
+						<h3 className="filter-vehicle-title 2">Year</h3>
 					</div>
 				</div>
-				<div>
-					<Slider
-						value={yearSliderValue}
-						onChange={handleYearSliderChange}
-						valueLabelDisplay="auto"
-						getAriaValueText={valuetext}
-						disableSwap
-						max={2025}
-						min={2000}
-					/>
-				</div>
+				<Slider
+					value={yearSliderValue}
+					onChange={handleYearSliderChange}
+					valueLabelDisplay="auto"
+					getAriaValueText={valuetext}
+					disableSwap
+					min={2000}
+					max={2025}
+				/>
 			</div>
 			<div className="filter-vehicle colour">
 				<div className="title-and-image-filter-container 3">
 					<div className="filter-vehicle-title-wrapper paint">
-						<img src={paint} />
-						<div className="title-filter-wrapper colour">
-							<h3 className="filter-vehicle-title 3">Colour</h3>
-						</div>
+						<img src={paint} alt="Colour icon" />
+						<h3 className="filter-vehicle-title 3">Colour</h3>
 					</div>
 				</div>
 				<div className="color-filter-choices-container">
-					{car_colours.map((colour, i) => (
+					{car_colours.map((c, i) => (
 						<div
+							key={i}
+							id={c.colour}
 							className={`colour-filter-choice ${
-								activeColours.includes(colour.colour) ? "active" : ""
+								activeColours.includes(c.colour) ? "active" : ""
 							} ${i}`}
-							style={{ backgroundColor: `${colour.hex}` }}
-							id={`${colour.colour}`}
+							style={{ backgroundColor: c.hex }}
 							onClick={handleColourClick}
-							key={`${colour.colour} ${i}`}
-						></div>
+						/>
 					))}
 				</div>
 			</div>
-
 			<div className="sort-by-container">
 				<h3 className="sort-by-title">Sort By:</h3>
 				<div className="sorting-checkbox-container">
-					<div className="sorting-checkbox 1">
+					<label>
 						<input
-							id="priceId"
-							className="sort-by-checkbox Price"
 							type="checkbox"
-							onChange={handlePriceChange}
 							checked={priceChecked}
-						/>
-						<label htmlFor="priceId">Price</label>
-					</div>
-					<div className="sorting-checkbox 2">
+							onChange={handlePriceChange}
+						/>{" "}
+						Price
+					</label>
+					<label>
 						<input
-							id="yearId"
-							className="sort-by-checkbox Year"
 							type="checkbox"
-							onChange={handleYearChange}
 							checked={yearChecked}
-						/>
-						<label htmlFor="yearId">Year</label>
-					</div>
-					<div className="sorting-checkbox 3">
+							onChange={handleYearChange}
+						/>{" "}
+						Year
+					</label>
+					<label>
 						<input
-							id="yearId"
-							className="sort-by-checkbox Rating"
 							type="checkbox"
-							onChange={handleRatingChange}
-							checked={ratingChecked}
-						/>
-						<label htmlFor="ratingId">Rating</label>
-					</div>
-					<div className="sorting-checkbox 4">
-						<input
-							id="dealId"
-							className="sort-by-checkbox Deals"
-							type="checkbox"
-							onChange={handleDealsChange}
 							checked={dealsChecked}
-						/>
-						<label htmlFor="dealId">Deals</label>
-					</div>
+							onChange={handleDealsChange}
+						/>{" "}
+						Deals
+					</label>
 				</div>
 			</div>
 			<div className="compare-two-vehicles">
-				<h3 className="compare-vehicles-title">Compare: </h3>
+				<h3 className="compare-vehicles-title">Compare:</h3>
 				<input
 					type="checkbox"
 					checked={compareChecked}
 					onClick={() => setCompareChecked(!compareChecked)}
-				></input>
+				/>
 			</div>
 		</div>
 	);

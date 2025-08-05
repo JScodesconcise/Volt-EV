@@ -24,7 +24,8 @@ function VehicleCard({
 }) {
 	const { cartItems, setCartItems, visibility } = useShoppingCart();
 
-	function handleAddtoCart() {
+	function handleAddtoCart(e) {
+		e.stopPropagation();
 		const newItem = {
 			image: image,
 			title: title,
@@ -80,10 +81,7 @@ function VehicleCard({
 		);
 	}
 	function handleViewOrCompare(e) {
-		if (compareChecked) {
-			// console.log(id);
-			handleCompare(id);
-		}
+		handleCompare(id);
 	}
 	return (
 		<div className="vehicle-card" onClick={handleViewOrCompare}>

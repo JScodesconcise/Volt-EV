@@ -16,15 +16,22 @@ public abstract class VehicleMapper {
     protected FileService fileService;
 
     @Mapping(target="image", expression="java(src.getImage().getOriginalFilename())")
+    @Mapping(target="backgroundImage", expression="java(src.getBackgroundImage().getOriginalFilename())")
     public abstract Vehicle VechicleDTOtoVehicle(VehicleDTO src);
 
     @Mapping(target = "image", ignore = true)
     @Mapping(target = "imageKey", source = "image")
+    @Mapping(target = "backgroundImage", ignore = true)
+    @Mapping(target = "backgroundImageKey", source = "backgroundImage")
     @Mapping(target = "id", source = "id")
     public abstract VehicleDTO VehicleToDTO(Vehicle src);
 
     public VehicleDTO VehicleDTOattatchUrl(VehicleDTO src){
         src.setImageUrl(fileService.generateUrl(src.getImageKey()));
         return src;
+    }
+    public VehicleDTO VehicleDTOattatchURLBackground(VehicleDTO src){
+       src.setBackgroundImageUrl(fileService.generateUrl(src.getBackgroundImageKey()));
+       return src;
     }
 }

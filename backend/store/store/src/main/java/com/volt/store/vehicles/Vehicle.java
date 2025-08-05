@@ -11,8 +11,11 @@ public class Vehicle {
 
     @Id
     private String id;
+    private boolean deal;
     private String image;
+    private String backgroundImage;
     private int price;
+    private String title;
     private String colour;
     private String drivetrain;
     private int year;
@@ -33,7 +36,14 @@ public class Vehicle {
     public void setId(String id) {
         this.id = id;
     }
+    public String getBackgroundImage() {
+        return backgroundImage;
+    }
 
+
+    public void setBackgroundImage(String backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
     public void setImage(String image) {
         this.image = image;
     }
@@ -116,5 +126,21 @@ public class Vehicle {
 
     public String getId() {
         return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public boolean isDeal() {
+        return deal;
+    }
+
+    public void setDeal(boolean deal) {
+        this.deal = deal;
     }
 }

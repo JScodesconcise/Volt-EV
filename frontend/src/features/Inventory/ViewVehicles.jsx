@@ -30,26 +30,36 @@ function ViewVehicles() {
 	}, []);
 
 	function handleCompare(id) {
-		if (compareList.includes(id)) {
-			setCompareList(compareList.filter((item) => item !== id));
-		} else {
-			if (compareList.length === 1) {
-				console.log("now here");
-				const VehicleArr = [];
-				const vehicle1 = vehicles.find(v => v.id === id);
-				const vehicle2 = vehicles.find(v => v.id === compareList[0]);
-				
-				if (vehicle1 && vehicle2) {
-					VehicleArr.push(vehicle1);
-					VehicleArr.push(vehicle2);
-					setCompareList([]);
-					navigate("/compare", { state: { VehicleArr } });
-				} else {
-					console.error("Could not find vehicles with IDs:", id, compareList[0]);
-				}
+		if (compareChecked) {
+			if (compareList.includes(id)) {
+				setCompareList(compareList.filter((item) => item !== id));
 			} else {
-				setCompareList([id]);
+				if (compareList.length === 1) {
+					console.log("now here");
+					const VehicleArr = [];
+					const vehicle1 = vehicles.find((v) => v.id === id);
+					const vehicle2 = vehicles.find((v) => v.id === compareList[0]);
+
+					if (vehicle1 && vehicle2) {
+						VehicleArr.push(vehicle1);
+						VehicleArr.push(vehicle2);
+						setCompareList([]);
+						navigate("/compare", { state: { VehicleArr } });
+					} else {
+						console.error(
+							"Could not find vehicles with IDs:",
+							id,
+							compareList[0]
+						);
+					}
+				} else {
+					setCompareList([id]);
+				}
 			}
+		} else {
+			const myVehicle = vehicles.find((v) => v.id === id);
+			console.log(myVehicle);
+			navigate(`/details/${id}`, { state: myVehicle });
 		}
 	}
 

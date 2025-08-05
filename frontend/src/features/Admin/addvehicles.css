@@ -68,7 +68,10 @@
 	margin-top: 1.5em;
 }
 .dropzone {
-	border: 1px solid blue;
+	margin-bottom: 1em;
 	height: 100px;
 	width: 100px;
+}
+.files-wrapper-add-vehicle {
+	margin-bottom: 0.5em;
 }

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -31,6 +32,7 @@ public class VehicleController {
     @PostMapping("/upload")
     public ResponseEntity<Void> addVehicles(@ModelAttribute VehicleDTO vehicle) throws IOException {
         fileService.uploadFile(vehicle.getImage());
+        fileService.uploadFile(vehicle.getBackgroundImage());
         Vehicle res = vehicleMapper.VechicleDTOtoVehicle(vehicle);
         vehicleService.addVehicle(res);
 
@@ -43,21 +45,30 @@ public class VehicleController {
         return ResponseEntity.ok(resp);
     }
     @GetMapping("/getVehicles")
-    public ResponseEntity<List<VehicleDTO>> getVehicles(@RequestParam(defaultValue = "0") int page,
-                                                        @RequestParam(defaultValue = "") String sortBy,
-                                                        @RequestParam(defaultValue = "") Optional<List<String>> colours,
-                                                        @RequestParam(defaultValue = "2000") int startYear,
-                                                        @RequestParam(defaultValue = "2025") int endYear,
-                                                        @RequestParam(defaultValue = "30000") int startPrice,
-                                                        @RequestParam(defaultValue = "100000") int endPrice){
+    public ResponseEntity<List<VehicleDTO>> getVehicles(
+            @RequestParam(defaultValue="0")     int page,
+            @RequestParam(defaultValue="")      String sortBy,
+            @RequestParam(name="colours", required=false) List<String> colours,
+            @RequestParam(defaultValue="2000")  int startYear,
+            @RequestParam(defaultValue="2025")  int endYear,
+            @RequestParam(defaultValue="30000") int startPrice,
+            @RequestParam(defaultValue="100000")int endPrice,
+            @RequestParam(defaultValue="false") boolean deal
+    ) {
+        List<String> colourList = (colours == null) ? List.of() : colours;
 
-        System.out.println();
-        List<String> colourList = colours.isEmpty() ? new ArrayList<>() : colours.get();
+        Page<Vehicle> pageOfVehicles = vehicleService.getVehicles(
+                page, sortBy, colourList,
+                startYear, endYear,
+                startPrice, endPrice,
+                deal
+        );
 
-        List<VehicleDTO> res = vehicleService.getVehicles(page, sortBy, colourList, startYear, endYear, startPrice, endPrice)
-                                .map(v -> vehicleMapper.VehicleToDTO(v))
-                                .map(v -> vehicleMapper.VehicleDTOattatchUrl(v))
-                                .getContent();
+        List<VehicleDTO> res = pageOfVehicles.getContent().stream()
+                .map(vehicleMapper::VehicleToDTO)
+                .map(vehicleMapper::VehicleDTOattatchUrl)
+                .map(vehicleMapper::VehicleDTOattatchURLBackground)
+                .collect(Collectors.toList());
 
         return ResponseEntity.ok(res);
     }
@@ -73,7 +84,6 @@ public class VehicleController {
 
             Vehicle existingVehicle = existingVehicleOpt.get();
 
-            // Update all fields
             existingVehicle.setYear(updatedVehicle.getYear());
             existingVehicle.setPrice(updatedVehicle.getPrice());
             existingVehicle.setDrivetrain(updatedVehicle.getDrivetrain());

@@ -13,7 +13,19 @@ public class VehicleDTO {
     private String id;
     @JsonProperty(access = Access.WRITE_ONLY)
     private MultipartFile image;
+
+    public void setBackgroundImage(MultipartFile backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
+
+    public MultipartFile getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    @JsonProperty(access = Access.WRITE_ONLY)
+    private MultipartFile backgroundImage;
     private int price;
+    private String title;
     private String colour;
     private String drivetrain;
     private int year;
@@ -26,7 +38,25 @@ public class VehicleDTO {
     @JsonProperty(access = Access.READ_ONLY)
     private String imageUrl;
     private String imageKey;
+    @JsonProperty(access = Access.READ_ONLY)
+    private String backgroundImageUrl;
+    private String backgroundImageKey;
+    private boolean deal;
 
+    public String getBackgroundImageUrl() {
+        return backgroundImageUrl;
+    }
+
+    public String getBackgroundImageKey() {
+        return backgroundImageKey;
+    }
+    public void setBackgroundImageUrl(String backgroundImageUrl) {
+        this.backgroundImageUrl = backgroundImageUrl;
+    }
+
+    public void setBackgroundImageKey(String backgroundImageKey) {
+        this.backgroundImageKey = backgroundImageKey;
+    }
     public String getId() {
         return id;
     }
@@ -137,5 +167,21 @@ public class VehicleDTO {
 
     public void setImageKey(String imageKey){
         this.imageKey = imageKey;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public boolean isDeal() {
+        return deal;
+    }
+
+    public void setDeal(boolean deal) {
+        this.deal = deal;
     }
 }

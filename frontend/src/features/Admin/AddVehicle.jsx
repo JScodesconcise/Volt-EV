@@ -7,7 +7,9 @@ import "./addvehicles.css";
 function AddVehicle() {
 	const navigate = useNavigate();
 	const [files, setFiles] = useState([]);
+	const [backgroundFile, setBackgroundFile] = useState([]);
 	const fileRef = useRef(null);
+	const backgroundFileRef = useRef(null);
 
 	const baseStyle = {
 		backgroundColor: "#E0E5E9",
@@ -17,6 +19,39 @@ function AddVehicle() {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
+	};
+	const commonOps = {
+		accept: { "image/*": [] },
+		maxFiles: 1,
+	};
+
+	const onDropVehicle = (acceptedFiles) => {
+		setFiles(
+			acceptedFiles.map((obj) => {
+				return Object.assign(obj, { preview: URL.createObjectURL(obj) });
+			})
+		);
+		if (fileRef.current) {
+			const dt = new DataTransfer();
+			acceptedFiles.forEach((file) => {
+				dt.items.add(file);
+			});
+			fileRef.current.files = dt.files;
+		}
+	};
+	const onDropBackground = (acceptedFiles) => {
+		setBackgroundFile(
+			acceptedFiles.map((obj) => {
+				return Object.assign(obj, { preview: URL.createObjectURL(obj) });
+			})
+		);
+		if (fileRef.current) {
+			const dt = new DataTransfer();
+			acceptedFiles.forEach((file) => {
+				dt.items.add(file);
+			});
+			backgroundFileRef.current.files = dt.files;
+		}
 	};
 
 	const focusedStyle = {};
@@ -31,24 +66,24 @@ function AddVehicle() {
 		};
 	}, [files]);
 
-	const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } =
-		useDropzone({
-			accept: { "image/*": [] },
-			onDrop: (acceptedFiles) => {
-				setFiles(
-					acceptedFiles.map((obj) => {
-						return Object.assign(obj, { preview: URL.createObjectURL(obj) });
-					})
-				);
-				if (fileRef.current) {
-					const dt = new DataTransfer();
-					acceptedFiles.forEach((file) => {
-						dt.items.add(file);
-					});
-					fileRef.current.files = dt.files;
-				}
-			},
-		});
+	const {
+		getRootProps: getVehicleRootProps,
+		getInputProps: getVehicleInputProps,
+		isFocused,
+		isDragAccept,
+		isDragReject,
+	} = useDropzone({
+		commonOps,
+		onDrop: onDropVehicle,
+	});
+
+	const {
+		getRootProps: getBackgroundRootProps,
+		getInputProps: getBackgroundInputProps,
+	} = useDropzone({
+		commonOps,
+		onDrop: onDropBackground,
+	});
 
 	const style = useMemo(
 		() => ({
@@ -78,18 +113,52 @@ function AddVehicle() {
 			<div className="add-vehicles-form-wrapper">
 				<form className="add-vehicle-form" onSubmit={handleFormSubmit}>
 					<h1 className="add-vehicle-title">Add New Vehicles</h1>
-					<div {...getRootProps({ className: "dropzone" })} style={style}>
+					<h2 className="add-vehicles-dropzone-title vehicle">
+						Vehicle Card Image
+					</h2>
+					<div
+						{...getVehicleRootProps({ className: "dropzone 1" })}
+						style={style}
+					>
 						<input
 							name="image"
 							type="file"
 							ref={fileRef}
 							className="add-vehicles-file-input"
 						/>
-						<input {...getInputProps()} />
+						<input {...getVehicleInputProps()} />
 						<h2>Click to Upload image</h2>
 					</div>
-					<div>
+
+					<div className="files-wrapper-add-vehicle vehicle">
 						{files.map((file) => (
+							<img
+								src={file.preview}
+								onLoad={() => URL.revokeObjectURL(file)}
+								alt="car"
+								key={`vehicle-image`}
+								className="add-vehicle-dropzone-image vehicle"
+							/>
+						))}
+					</div>
+					<h2 className="add-vehicles-dropzone-title background">
+						Vehicle Background Image
+					</h2>
+					<div
+						{...getBackgroundRootProps({ className: "dropzone 2" })}
+						style={style}
+					>
+						<input
+							name="backgroundImage"
+							type="file"
+							ref={backgroundFileRef}
+							className="add-vehicles-file-input background"
+						/>
+						<input {...getBackgroundInputProps()} />
+						<h2>Click to Upload image</h2>
+					</div>
+					<div className="files-wrapper-add-vehicle background">
+						{backgroundFile.map((file) => (
 							<img
 								src={file.preview}
 								onLoad={() => URL.revokeObjectURL(file)}
@@ -99,7 +168,15 @@ function AddVehicle() {
 							/>
 						))}
 					</div>
-
+					<label for="tite" className="add-vehicles-input-label title">
+						Title
+					</label>
+					<input
+						type="text"
+						id="title"
+						name="title"
+						className="add-vehicles-text-input title"
+					/>
 					<label for="price" className="add-vehicles-input-label price">
 						Price
 					</label>
@@ -109,7 +186,7 @@ function AddVehicle() {
 						name="price"
 						className="add-vehicles-text-input price"
 					/>
-					<label for="colour" className="add-vehicles-input-label price">
+					<label for="colour" className="add-vehicles-input-label colour">
 						Colour
 					</label>
 					<select id="color" name="colour">
@@ -122,6 +199,14 @@ function AddVehicle() {
 						<option value="green">Green</option>
 						<option value="blue">Blue</option>
 					</select>
+					<label for="colour" className="add-vehicles-input-label Deal">
+						Deal
+					</label>
+					<select id="color" name="deal">
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+
 					<label
 						for="drivetrain"
 						className="add-vehicles-input-label drivetrain"

@@ -7,10 +7,10 @@ export function ShoppingCartProvider({ children }) {
 	const [cartItems, setCartItems] = useState([]);
 
 	return (
-		<ShoppingCartContext
+		<ShoppingCartContext.Provider
 			value={{ visibility, setVisibility, cartItems, setCartItems }}
 		>
 			{children}
-		</ShoppingCartContext>
+		</ShoppingCartContext.Provider>
 	);
 }

@@ -15,12 +15,15 @@ function Cart() {
 
 	useEffect(() => {
 		let count = 0;
-		for (let i = 0; i < cartItems.length; i++) {
-			count += parseInt(cartItems[i].price.replace("$", "").replace(" ", ""));
-		}
+		cartItems.forEach((item) => {
+			// normalize price to a number
+			const raw = item.price;
+			const priceNum =
+				typeof raw === "string" ? parseFloat(raw.replace(/[^0-9.]/g, "")) : raw;
+			count += priceNum * (item.quantity || 1);
+		});
 		setTotal(count);
-	}, [total]);
-
+	}, [cartItems]);
 	return (
 		<div className="shopping-cart-container">
 			<div className="cart-blur" onClick={() => setVisibility(false)}></div>

@@ -1,0 +1,190 @@
+.vehicle-details-car-title,
+.vehicle-details-first-page-spec-wrapper > h3,
+.vehicle-details-second-page-title,
+.vehicle-details-card > h3,
+.technical-specifications-header > h3,
+.vehicle-details-third-page-inner > h2,
+.vehicle-details-car-price {
+	font-family: "poppins";
+}
+
+.vehicle-details-car-title,
+.vehicle-details-second-page-title,
+.vehicle-card > h3,
+.technical-specifications-header > h3,
+.vehicle-details-third-page-inner > h2 .vehicle-details-buy-now-button,
+.vehicle-details-first-page-spec-wrapper,
+.vehicle-details-buy-now-button,
+.technical-specifications-bolded {
+	font-weight: 700;
+}
+
+.vehicle-details-car-slogan,
+.vehicle-details-buy-now-button,
+.vehicle-details-card > p {
+	font-family: "Roboto";
+}
+
+.technical-specifications > h4 {
+	font-family: "Montserrat";
+	font-weight: 300;
+}
+
+.vehicle-details-first-page-spec-wrapper {
+	font-weight: 600;
+}
+
+.technical-specifications-header {
+	font-size: 1.5rem;
+}
+
+.vehicle-details-third-page-inner > h2 {
+	font-size: 2rem;
+	margin-bottom: 1em;
+}
+.vehicle-details-third-page-inner > h2,
+.vehicle-details-second-page-title {
+	margin-top: 1.16rem;
+}
+.vehicle-details-car-slogan {
+	font-size: 1.625rem;
+	font-weight: 400;
+}
+
+.vehicle-details-car-title {
+	font-size: 4rem;
+	margin-bottom: 0;
+}
+.vehicle-details-car-slogan {
+	font-size: 1.625rem;
+	margin-bottom: 1.57em;
+}
+.vehicle-details-car-price {
+	font-size: 2.25em;
+	margin-bottom: 1.14em;
+}
+
+.vehicle-details-first-page {
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+}
+
+.vehicle-details-car-slogan {
+	color: var(--brown-color);
+}
+.vehicle-details-car-price {
+	color: var(--green-color);
+}
+
+.vehicle-details-first-page-spec-outer-wrapper {
+	border-left: 1px solid var(--green-color);
+}
+
+.vehicle-details-first-page-spec-wrapper > h3 {
+	color: var(--orange-color);
+}
+.vehicle-details-car-title,
+.vehicle-details-first-page-spec-wrapper > h4,
+.vehicle-details-buy-now-button {
+	color: var(--white-color);
+}
+.vehicle-details-first-page-specs {
+	display: flex;
+}
+
+.vehicle-details-buy-now-button {
+	font-size: 1.25rem;
+	padding: 0.5em 3em;
+	background-color: var(--navy-color);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.vehicle-details-wrapper {
+	width: auto;
+	background-color: var(--black-color);
+	width: 40%;
+	min-height: 90vh;
+}
+.vehicle-details-first-page-spec-wrapper > h3 {
+	font-size: 2rem;
+}
+.vehicle-details-first-page-spec-wrapper > h4 {
+	font-size: 0.875em;
+}
+.vehicle-details-first-page-spec-wrapper {
+	margin-left: 1em;
+	margin-bottom: 1.375em;
+	margin-right: 0.5em;
+}
+.vehicle-details-first-page-spec-outer-wrapper {
+	margin-bottom: 7.75em;
+}
+.vehicle-details-inner-wrapper {
+	margin: 5.4375em 0 0 4.1875em;
+}
+/* second page */
+.vehicle-details-card > h3 {
+	color: var(--navy-color);
+	font-size: 1.875rem;
+}
+.vehicle-details-second-page-title {
+	text-align: center;
+	font-size: 2.25rem;
+}
+.vehicle-details-card {
+	border: 1.5px solid var(--gray-color);
+	border-radius: 5px;
+	padding: 0.5em;
+	max-width: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2em;
+}
+.vehicle-details-card > h3 {
+	margin-top: 0.23em;
+}
+.vehicle-details-card > p {
+	margin: 1.3125em 0 3.612em 0;
+	text-align: center;
+}
+.vehicle-details-cards-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+.vehicle-details-second-page-title {
+	margin-bottom: 1.2em;
+}
+.vehicle-details-third-page {
+	background-color: var(--black-color);
+}
+.vehicle-details-third-page > * {
+	color: var(--white-color);
+}
+.technical-specifications,
+.technical-specifications-header {
+	display: flex;
+	justify-content: space-between;
+}
+.vehicle-details-third-page-inner {
+	width: 80%;
+}
+.vehicle-details-third-page {
+	display: flex;
+	justify-content: center;
+}
+.vehicle-details-third-page-inner > h2 {
+	text-align: center;
+}
+.technical-specifications-header {
+	margin-bottom: 1.25em;
+}
+.technical-specifications {
+	margin-bottom: 1.5em;
+}
+.technical-specifications-bolded {
+	color: var(--orange-color);
+}
