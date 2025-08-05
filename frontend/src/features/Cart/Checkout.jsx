@@ -13,7 +13,11 @@ function Checkout() {
 	useEffect(() => {
 		let count = 0;
 		for (let i = 0; i < cartItems.length; i++) {
-			count += parseInt(cartItems[i].price.replace("$", "").replace(" ", ""));
+			const price = cartItems[i].price;
+			const priceNum = typeof price === "string" ? 
+				parseFloat(price.replace(/[^0-9.]/g, "")) : 
+				price;
+			count += priceNum * (cartItems[i].quantity || 1);
 		}
 		setTotal(count);
 	}, [cartItems]);
