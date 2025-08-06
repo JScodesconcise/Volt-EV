@@ -37,7 +37,7 @@ If you’re running MongoDB locally, the default URI is:
 
 spring.data.mongodb.uri=mongodb://localhost:27017/volt-ev
 
-If you use MongoDB Atlas, copy your connection string and replace <username>, <password>, and <dbname> accordingly.
+If you use MongoDB Atlas, copy your connection string and replace username, password, and dbname accordingly.
 
 Backend (Spring Boot)
 
