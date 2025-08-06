@@ -1,4 +1,4 @@
-https://drive.google.com/file/d/1kpsnmMZAf3OCTNew64CJQhyIJsvpUclR/view?usp=sharing
+Video of project: https://drive.google.com/file/d/1kpsnmMZAf3OCTNew64CJQhyIJsvpUclR/view?usp=sharing
 
 # Volt-EV
 
